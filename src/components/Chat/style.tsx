@@ -11,7 +11,7 @@ export const ChatInput = styled.input`
     outline: none;
     padding: 0.5rem 1rem;
     border-radius: 0.4rem;
-    background-color: ${props => props.theme.colors.primary2};
+    background-color: ${props => props.theme.colors.primary};
     color: ${props => props.theme.colors.secondary};
     justify-self: flex-end;
 `
@@ -39,13 +39,17 @@ export const ChatMessages = styled.div`
 `
 
 export const Chat = styled.div`
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     width: 400px;
     height: 500px;
-    background-color: ${props => props.theme.colors.primary};
+    background-color: black;
     border-radius: 0.5rem;
     padding-bottom: 0.5rem;
+    box-shadow: 0 0 5px 0 #00000044;
 `
 

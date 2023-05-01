@@ -1,5 +1,5 @@
 {
-  "name": "ava-frontend",
+  "name": "al-frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,16 +10,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/cannon": "^6.5.2",
+    "@react-three/drei": "^9.66.1",
+    "@react-three/fiber": "^8.13.0",
     "framer-motion": "^10.12.4",
+    "gsap": "^3.11.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "socket.io-client": "^4.6.1",
-    "styled-components": "^5.3.10"
+    "styled-components": "^5.3.10",
+    "three": "^0.152.2",
+    "zustand": "^4.3.7"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/styled-components": "^5.1.26",
+    "@types/three": "^0.151.0",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react": "^3.1.0",
