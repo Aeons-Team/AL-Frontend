@@ -7,7 +7,7 @@ export const theme = {
         primary2: '#221f28',
         primary3: '#27252e',
         primary4: '#2c2932',
-        primary5: '#3a3643',
+        primary5: '#0A090C',
         secondary: '#ffffff',
         active: '#5c3bef',
         chatMessage: '#4453f6',

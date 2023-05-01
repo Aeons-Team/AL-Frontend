@@ -8,31 +8,31 @@ export const Nav = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: ${props => props.theme.colors.primary4};
+    background: ${props => props.theme.colors.primary5};
     border-radius: 15px;
-    border: 1rem solid ${props => props.theme.colors.primary4};
-    color: ${props => props.theme.colors.primary4};
+    border: 1rem solid ${props => props.theme.colors.primary5};
+    color: ${props => props.theme.colors.primary5};
     position: fixed;
     width: 60rem;
-    height: 5rem;
+    height: 6rem;
     left: 26rem;
-    top: 53rem;
+    top: 52rem;
     `
   export const NavItem = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: ${props => props.theme.colors.primary4};
+    background: ${props => props.theme.colors.primary5};
     border-radius: 25px;
-    border: 2rem solid ${props => props.theme.colors.primary4};
+    border: 2rem solid ${props => props.theme.colors.primary5};
     color: white;
     width: 2rem;
-    height: 1rem;
+    height: 2rem;
     left: 1rem;
     top: 1rem;
-    margin-left: 7rem;
-    margin-right: 9rem;
+    margin-left: 5rem;
+    margin-right: 7rem;
     box-shadow: 0px 0px 3.4398px rgba(0, 0, 0, 0.4);
     `
 

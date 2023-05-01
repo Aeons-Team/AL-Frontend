@@ -31,7 +31,7 @@ export const Button = styled.button<ButtonProps>`
     position: fixed;
     
     border-radius: 0.25rem;
-    border: 1px solid ${props => props.theme.colors.primary4};
+    border: 1px solid ${props => props.theme.colors.primary5};
     color: ${props => props.theme.colors.primary5};
     
     width: 10rem;
@@ -41,7 +41,7 @@ export const Button = styled.button<ButtonProps>`
     
 
     ${props => props.primary && css`
-        background: ${props => props.theme.colors.primary4};
+        background: ${props => props.theme.colors.primary5};
         color: white;
     `}
 `;
