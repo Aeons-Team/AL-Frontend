@@ -10,4 +10,4 @@ export const useAppStore = create<AppStoreState>((set) => ({
     cursor: new Vector2(0, 0)
 }))
 
-export const useAppStoreShallow = (selector: (state: AppStoreState) => AppStoreState) => useAppStore(selector, shallow)
+export const useAppStoreShallow = (selector: (state: AppStoreState) => Partial<AppStoreState>) => useAppStore(selector, shallow)

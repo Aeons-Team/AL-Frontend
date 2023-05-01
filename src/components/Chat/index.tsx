@@ -1,72 +1,35 @@
-import { useEffect, useState, useRef } from 'react'
-import io, { Socket } from 'socket.io-client'
+import { useRef, useLayoutEffect } from 'react'
+import { useChatStore, useChatStoreShallow } from '../../data/ChatStore'
 import * as S from './style'
 
-interface Message {
-    from?: 'me' | 'ai'
-    text: string
-}
-
 export default function Chat() {
-    const [messages, setMessages] = useState<Message[]>([])
-    const [currentMessage, setCurrentMessage] = useState<Message>()
+    const { initialize, messages, currentMessage, disableInput, sendMessage } = useChatStoreShallow(state => ({
+        initialize: state.initialize,
+        messages: state.messages,
+        currentMessage: state.currentMessage,
+        disableInput: state.disableInput,
+        sendMessage: state.sendMessage
+    }))
 
-    const socketRef = useRef<Socket>()
-    const inputRef = useRef<HTMLInputElement | null>(null)
+    const inputRef = useRef<HTMLInputElement>(null)
 
-    useEffect(() => {
-        const socket = io(import.meta.env.VITE_PUBLIC_API_URL)
-
-        socketRef.current = socket
-
-        socket.on('message-start', () => {
-            setCurrentMessage({ from: 'ai', text: '' })
-        })
-        
-        socket.on('message-end', () => {
-            setCurrentMessage(currentMessage => {
-                if (currentMessage) setMessages(messages => [...messages, currentMessage])
-                return undefined
-            })
-        })
-
-        socket.on('message-text', (msg: Message) => {
-            setCurrentMessage(currentMessage => {
-                if (currentMessage) {
-                    currentMessage.text += msg.text
-                    return { ...currentMessage }
-                }
-            })
-        })
-
-        socket.on('message-error', (error: any) => {
-
-        })
-
-        socket.connect()
+    useLayoutEffect(() => {
+        initialize()
     }, [])
 
     const send = () => {
-        const socket = socketRef.current
         const input = inputRef.current
 
-        if (socket && input) {
-            const msg: any = {
-                text: input.value
-            }
-    
-            socket.emit('message', msg)
+        if (input) {
+            useChatStore.setState({ disableInput: true })
+            sendMessage(input.value)
 
-            msg.from = 'me'
-    
-            setMessages(messages => [...messages, msg])
-
-            input.value = ""
+            input.value = ''
         }
     }
 
     return (
-        <S.Chat className='chat'>
+        <S.Chat>
             <S.ChatMessages>
                 {
                     messages.map((message, i) => (
@@ -75,12 +38,11 @@ export default function Chat() {
                 }
 
                 {
-                    currentMessage && currentMessage.text &&
-                    <S.ChatMessage from={currentMessage.from}>{currentMessage.text}</S.ChatMessage>
+                    currentMessage && <S.ChatMessage from='ai'>{currentMessage}</S.ChatMessage>
                 }
             </S.ChatMessages>
 
-            <S.ChatInput ref={inputRef} className='chat-input' onKeyDown={(e) => e.key == 'Enter' && send()} />
+            <S.ChatInput ref={inputRef} disabled={disableInput} onKeyDown={(e) => e.key == 'Enter' && send()} />
         </S.Chat>
     )
 }
