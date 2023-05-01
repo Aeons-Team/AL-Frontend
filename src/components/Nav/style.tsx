@@ -31,8 +31,8 @@ export const Nav = styled.div`
     height: 2rem;
     left: 1rem;
     top: 1rem;
-    margin-left: 5rem;
-    margin-right: 7rem;
+    margin-left: 3rem;
+    margin-right: 5rem;
     box-shadow: 0px 0px 3.4398px rgba(0, 0, 0, 0.4);
     `
 
