@@ -1,34 +1,40 @@
 import styled from 'styled-components'
 
-    export const Navbar = styled.div`
-        color: white;
+export const Navbar = styled.div`
+    color: red;
+`
+export const Nav = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: ${props => props.theme.colors.primary4};
+    border-radius: 15px;
+    border: 1rem solid ${props => props.theme.colors.primary4};
+    color: ${props => props.theme.colors.primary4};
+    position: fixed;
+    width: 60rem;
+    height: 5rem;
+    left: 26rem;
+    top: 53rem;
     `
-    export const Nav = styled.div`
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        background: transparent;
-        border-radius: 3px;
-        border: 2px solid transparent;
-        color: #8050E4;
-        margin: 0.5em 1em;
-        padding: 0.25em 1em;
-        align-items: left;
-        `;
+  export const NavItem = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: ${props => props.theme.colors.primary4};
+    border-radius: 25px;
+    border: 2rem solid ${props => props.theme.colors.primary4};
+    color: white;
+    width: 2rem;
+    height: 1rem;
+    left: 1rem;
+    top: 1rem;
+    margin-left: 7rem;
+    margin-right: 9rem;
+    box-shadow: 0px 0px 3.4398px rgba(0, 0, 0, 0.4);
+    `
 
-      export const NavItem = styled.div`
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        background: transparent;
-        border-radius: 3px;
-        border: 2px solid transparent;
-        color: white;
-        margin: 0.5em 1em;
-        padding: 0.25em 1em;
-        align-items: left;
-        `;
 
 

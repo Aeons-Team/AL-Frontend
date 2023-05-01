@@ -8,8 +8,8 @@ export default function Navbar() {
 
             <S.Nav>
                 <S.NavItem>Home</S.NavItem>
-                <S.NavItem>Team</S.NavItem>
-                <S.NavItem>XD</S.NavItem>
+                <S.NavItem>Featues</S.NavItem>
+                <S.NavItem>Pricing</S.NavItem>
             </S.Nav>
 
         </S.Navbar>

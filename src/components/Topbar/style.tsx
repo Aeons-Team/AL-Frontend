@@ -21,7 +21,7 @@ export const Text= styled.div`
     height: 3rem;
     left: 5rem;
     top: 2rem;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 2rem;
     line-height: 5rem;
     

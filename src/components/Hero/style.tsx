@@ -1,42 +1,53 @@
-import styled,{css} from 'styled-components'
+import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-interface ButtonProps {
-    primary?: boolean
-}
 
 export const Hero = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding-left: 5rem;
-    padding-top: 8rem;
+    color: white;
 `
-
-export const Button = styled.button<ButtonProps>`
-    background: transparent;
-    border-radius: 4px;
-    border: 1px solid #8050E4;
-    color: #8050E4;
-    padding: 0.75rem 1rem;
-    margin-top: 2rem;
-    width: 12rem;
-
-    ${props => props.primary && css`
-        background: ${props => props.theme.colors.active};
-        color: white;
-    `}
-`;
     
 export const Title = styled(motion.div)`
-    font-size: 8rem;
-    text-align: left;
-    color: white;
+    position: absolute;
+    width: 10rem;
+    height: 0rem;
+    left: 10rem;
+    top: 20rem;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 275;
+    font-size: 7em;
+    line-height: 5rem;
 `;
 
 export const Text = styled(motion.p)`
-    font-size: 1.5em;
-    text-align: left;
-    color: white;
+    position: absolute;
+    width: 100rem;
+    height: 0rem;
+    left: 10rem;
+    top: 28rem;
+    font-size: 1.7em;
+    line-height: 2rem;
+`;
+
+export const Maintext = styled(motion.div)`
+    position: absolute;
+    width: 20rem;
+    height: 0rem;
+    left: 10rem;
+    top: 43rem;
+    font-size: 1.3em;
+    line-height: 2rem;
+`;
+
+export const Sidetext = styled(motion.div)`
+    position: absolute;
+    width: 17rem;
+    height: 0rem;
+    left: 90rem;
+    top: 35rem;
+    font-size: 1.3rem;
+    line-height: 2rem; 
 `;
 
 export const Span = styled.span`
