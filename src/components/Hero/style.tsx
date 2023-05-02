@@ -8,10 +8,10 @@ export const Hero = styled.div`
     
 export const Title = styled(motion.div)`
     position: absolute;
-    width: 10rem;
-    height: 0rem;
-    left: 10rem;
-    top: 20rem;
+    width: 10vw;
+    height: 0vw;
+    left: 10vw;
+    top: 15vw;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -22,32 +22,32 @@ export const Title = styled(motion.div)`
 
 export const Text = styled(motion.p)`
     position: absolute;
-    width: 100rem;
-    height: 0rem;
-    left: 10rem;
-    top: 28rem;
+    width: 100vw;
+    height: 0vw;
+    left: 10vw;
+    top: 23vw;
     font-size: 1.5vw;
     line-height: 2rem;
 `;
 
 export const Maintext = styled(motion.div)`
     position: absolute;
-    width: 20rem;
-    height: 0rem;
-    left: 10rem;
-    bottom: 18rem;
+    width: 15vw;
+    height: 0vw;
+    left: 10vw;
+    bottom: 18vw;
     font-size: 1vw;
-    line-height: 2rem;
+    line-height: 1.5vw;
 `;
 
 export const Sidetext = styled(motion.div)`
     position: absolute;
-    width: 17rem;
-    height: 0rem;
-    right: 3rem;
-    bottom: 25rem;
+    width: 17vw;
+    height: 0vw;
+    right: 3vw;
+    bottom: 25vw;
     font-size: 1vw;
-    line-height: 2rem; 
+    line-height: 1.5vw; 
 `;
 
 export const Span = styled.span`

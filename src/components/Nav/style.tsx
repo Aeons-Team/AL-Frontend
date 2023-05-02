@@ -14,9 +14,9 @@ export const Nav = styled.div`
     color: ${props => props.theme.colors.primary5};
     position: fixed;
     width: 50%;
-    height: 6rem;
+    height: 5vw;
     left: 25%;
-    bottom: 4rem;
+    bottom: 4vw;
     `
   export const NavItem = styled.div`
     display: flex;
@@ -28,9 +28,9 @@ export const Nav = styled.div`
     border: 2rem solid ${props => props.theme.colors.primary5};
     color: white;
     width: 15%;
-    height: 2rem;
-    left: 1rem;
-    top: 1rem;
+    height: 2vw;
+    left: 1vw;
+    top: 1vw;
     margin-left: 3%;
     margin-right: 3%;
     box-shadow: 0px 0px 3.4398px rgba(0, 0, 0, 0.4);
