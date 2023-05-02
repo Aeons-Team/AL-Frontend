@@ -17,12 +17,11 @@ export const Topbar = styled.div`
 export const Text= styled.div`
     
     position: absolute;
-    width: 10rem;
-    height: 3rem;
-    left: 5rem;
-    top: 1rem;
-    font-weight: 300;
-    font-size: 2rem;
+    width: 10vw;
+    height: 3vw;
+    left: 5vw;
+    top: 1vw;
+    font-size: 2vw;
     line-height: 5rem;
     
 `;
@@ -34,10 +33,10 @@ export const Button = styled.button<ButtonProps>`
     border: 1px solid ${props => props.theme.colors.primary5};
     color: ${props => props.theme.colors.primary5};
     
-    width: 10rem;
-    height: 3rem;
-    right: 5rem;
-    top: 2rem;
+    width: 10vw;
+    height: 3vw;
+    right: 5vw;
+    top: 2vw;
     
 
     ${props => props.primary && css`

@@ -27,12 +27,12 @@ export const Nav = styled.div`
     border-radius: 25px;
     border: 2rem solid ${props => props.theme.colors.primary5};
     color: white;
-    width: 20%;
+    width: 15%;
     height: 2rem;
     left: 1rem;
     top: 1rem;
     margin-left: 3%;
-    margin-right: 0.1%;
+    margin-right: 3%;
     box-shadow: 0px 0px 3.4398px rgba(0, 0, 0, 0.4);
     `
 
