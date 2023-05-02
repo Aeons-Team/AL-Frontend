@@ -1,40 +1,34 @@
 import styled from 'styled-components'
 
-export const Navbar = styled.div`
-    color: red;
+export const NavbarWrapper = styled.div`
+	position: fixed;
+	bottom: 2rem;
+	display: flex;
+	justify-content: center;
+	width: 100vw;
 `
-export const Nav = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background: ${props => props.theme.colors.primary5};
-    border-radius: 15px;
-    border: 1rem solid ${props => props.theme.colors.primary5};
-    color: ${props => props.theme.colors.primary5};
-    position: fixed;
-    width: 50%;
-    height: 6rem;
-    left: 25%;
-    bottom: 4rem;
-    `
-  export const NavItem = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background: ${props => props.theme.colors.primary5};
-    border-radius: 25px;
-    border: 2rem solid ${props => props.theme.colors.primary5};
-    color: white;
-    width: 20%;
-    height: 2rem;
-    left: 1rem;
-    top: 1rem;
-    margin-left: 3%;
-    margin-right: 0.1%;
-    box-shadow: 0px 0px 3.4398px rgba(0, 0, 0, 0.4);
-    `
 
+export const Navbar = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background: ${props => props.theme.colors.primary5};
+	border-radius: 12px;
+	width: 90vw;
+	max-width: 700px;
+	overflow: hidden;
+	padding: 1.5rem 4rem;
+`
+
+export const NavItem = styled.div`
+    background: ${props => props.theme.colors.primary5};
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+	font-size: 0.8rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.5rem;
+`
 
 

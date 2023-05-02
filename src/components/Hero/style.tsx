@@ -1,53 +1,35 @@
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
-
+import styled, { css } from 'styled-components'
 
 export const Hero = styled.div`
-    color: white;
+    padding: 5rem 6rem;
 `
     
-export const Title = styled(motion.div)`
-    position: absolute;
-    width: 10rem;
-    height: 0rem;
-    left: 10rem;
-    top: 20rem;
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 275;
-    font-size: 7vw;
-    line-height: 5rem;
+export const Title = styled.div`
+    font-weight: 200;
+    font-size: 4.5rem;
 `;
 
-export const Text = styled(motion.p)`
-    position: absolute;
-    width: 100rem;
-    height: 0rem;
-    left: 10rem;
-    top: 28rem;
-    font-size: 1.5vw;
-    line-height: 2rem;
+export const Text = styled.p`
+    font-size: 1.5rem;
+    font-weight: 300;
 `;
 
-export const Maintext = styled(motion.div)`
-    position: absolute;
-    width: 20rem;
-    height: 0rem;
-    left: 10rem;
-    bottom: 18rem;
-    font-size: 1vw;
-    line-height: 2rem;
-`;
+interface SideTextProps {
+    number: number
+}
 
-export const Sidetext = styled(motion.div)`
+export const SideText = styled.div<SideTextProps>`
     position: absolute;
-    width: 17rem;
-    height: 0rem;
-    right: 3rem;
-    bottom: 25rem;
-    font-size: 1vw;
-    line-height: 2rem; 
+
+    ${props => props.number == 1 && css`
+        top: 600px;
+        left: 4rem;
+    `}
+
+    ${props => props.number == 2 && css`
+        top: 450px;
+        right: 4rem;
+    `}
 `;
 
 export const Span = styled.span`

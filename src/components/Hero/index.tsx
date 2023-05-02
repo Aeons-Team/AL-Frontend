@@ -3,54 +3,26 @@ import * as S from './style'
 export default function Hero() {
     return (
         <S.Hero>
-            <S.Title 
-                initial={{ opacity: 0, y: 20 }} 
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ 
-                    ease: 'easeInOut',
-                    duration: 0.35,
-                    delay: 0.5 
-                }}
-            >
+            <S.Title>
                 Aeons
             </S.Title>
 
-            <S.Text 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                    ease: 'easeInOut',
-                    duration: 0.35,
-                    delay: 0.75
-                }}
-            >
+            <S.Text>
                 Store your files <S.Span>decentralised</S.Span> and <S.Span>trustless</S.Span> with one-time payment for eons.
             </S.Text>
             
-            <S.Maintext 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                    ease: 'easeInOut',
-                    duration: 0.35,
-                    delay: 1
-                }}
+            <S.SideText
+                number={1}
             >
-                Seemlessly connect your crypto wallet via<S.Span> metamask</S.Span>
-            </S.Maintext>
+                Seemlessly connect to your <br /> crypto wallet via<S.Span> metamask</S.Span>
+            </S.SideText>
 
-            <S.Sidetext
-                initial={{ opacity: 0, y: 20 }}   
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                    ease: 'easeInOut',
-                    duration: 0.35,
-                    delay: 1.25
-                }}
+            <S.SideText
+                number={2}
             >
                 No third parties.<br/>
-                You <S.Span>own</S.Span> and manage who sees your data.
-            </S.Sidetext>
+                You <S.Span>own</S.Span> and manage <br /> who sees your data.
+            </S.SideText>
         </S.Hero>
     )
 }

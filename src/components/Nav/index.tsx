@@ -1,18 +1,19 @@
+import Icon from '../Icon'
 import * as S from './style'
 
 export default function Navbar() {
 
     return (
-
-        <S.Navbar>
-
-            <S.Nav>
-                <S.NavItem>Home</S.NavItem>
-                <S.NavItem>Featues</S.NavItem>
+        <S.NavbarWrapper>
+            <S.Navbar>
+                <S.NavItem>
+                    <Icon name='home' height='1.25rem' width='1.25rem' />
+                    Home
+                </S.NavItem>
+                
+                <S.NavItem>Features</S.NavItem>
                 <S.NavItem>Pricing</S.NavItem>
-            </S.Nav>
-
-        </S.Navbar>
-
+            </S.Navbar>
+        </S.NavbarWrapper>
     )
 }

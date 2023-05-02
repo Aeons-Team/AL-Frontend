@@ -4,45 +4,38 @@ interface ButtonProps {
     primary?: boolean
 }
 
-export const Topbar = styled.div`
-    color: white;
+export const Fade = styled.div`
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 77px;
-    left: 0px;
-    top: 0px;
-
+    height: 20vh;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: -1;
 `
-export const Text= styled.div`
-    
-    position: absolute;
-    width: 10rem;
-    height: 3rem;
-    left: 5rem;
-    top: 1rem;
-    font-weight: 300;
-    font-size: 2rem;
-    line-height: 5rem;
-    
+
+export const Topbar = styled.div`
+    display: flex;
+    position: sticky;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 1.75rem;
+`
+export const Text = styled.div`
+    font-weight: 200;
+    font-size: 1.1rem;
 `;
 
 export const Button = styled.button<ButtonProps>`
-    position: absolute;
-    
-    border-radius: 0.25rem;
+    border-radius: 6px;
     border: 1px solid ${props => props.theme.colors.primary5};
-    color: ${props => props.theme.colors.primary5};
-    
-    width: 10rem;
-    height: 3rem;
-    right: 5rem;
-    top: 2rem;
-    
+    color: ${props => props.theme.colors.secondary};
+    margin-left: auto;
+    padding: 0.85rem 1.9rem;
 
     ${props => props.primary && css`
         background: ${props => props.theme.colors.primary5};
-        color: white;
     `}
 `;
 
