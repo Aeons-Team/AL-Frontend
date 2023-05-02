@@ -16,7 +16,7 @@ export const Title = styled(motion.div)`
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 275;
-    font-size: 7em;
+    font-size: 7vw;
     line-height: 5rem;
 `;
 
@@ -26,7 +26,7 @@ export const Text = styled(motion.p)`
     height: 0rem;
     left: 10rem;
     top: 28rem;
-    font-size: 1.7em;
+    font-size: 1.5vw;
     line-height: 2rem;
 `;
 
@@ -36,7 +36,7 @@ export const Maintext = styled(motion.div)`
     height: 0rem;
     left: 10rem;
     bottom: 18rem;
-    font-size: 1.3em;
+    font-size: 1vw;
     line-height: 2rem;
 `;
 
@@ -46,7 +46,7 @@ export const Sidetext = styled(motion.div)`
     height: 0rem;
     right: 3rem;
     bottom: 25rem;
-    font-size: 1.3rem;
+    font-size: 1vw;
     line-height: 2rem; 
 `;
 
