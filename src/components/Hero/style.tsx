@@ -35,7 +35,7 @@ export const Maintext = styled(motion.div)`
     width: 20rem;
     height: 0rem;
     left: 10rem;
-    top: 43rem;
+    bottom: 18rem;
     font-size: 1.3em;
     line-height: 2rem;
 `;
@@ -44,8 +44,8 @@ export const Sidetext = styled(motion.div)`
     position: absolute;
     width: 17rem;
     height: 0rem;
-    left: 90rem;
-    top: 35rem;
+    right: 3rem;
+    bottom: 25rem;
     font-size: 1.3rem;
     line-height: 2rem; 
 `;

@@ -20,7 +20,7 @@ export const Text= styled.div`
     width: 10rem;
     height: 3rem;
     left: 5rem;
-    top: 2rem;
+    top: 1rem;
     font-weight: 300;
     font-size: 2rem;
     line-height: 5rem;
@@ -28,7 +28,7 @@ export const Text= styled.div`
 `;
 
 export const Button = styled.button<ButtonProps>`
-    position: fixed;
+    position: absolute;
     
     border-radius: 0.25rem;
     border: 1px solid ${props => props.theme.colors.primary5};

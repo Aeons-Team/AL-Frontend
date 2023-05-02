@@ -15,8 +15,8 @@ export const Nav = styled.div`
     position: fixed;
     width: 60rem;
     height: 6rem;
-    left: 26rem;
-    top: 52rem;
+    left: 25%;
+    bottom: 4rem;
     `
   export const NavItem = styled.div`
     display: flex;
