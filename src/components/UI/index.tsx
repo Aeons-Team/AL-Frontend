@@ -4,6 +4,7 @@ import Hero from '../Hero'
 import Topbar from '../Topbar'
 import Feature from '../Features'
 import Pricing from '../Pricing'
+import BlockInfo from '../BlockInfo'
 
 export default function UI() {
 
@@ -12,9 +13,10 @@ export default function UI() {
         <S.UI id='ui'>
             <Topbar /> 
             <Hero />
+            <Navbar />
+            <BlockInfo />
             <Feature />
             <Pricing />
-            <Navbar />
         </S.UI>
 
     )

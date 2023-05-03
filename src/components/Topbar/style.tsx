@@ -29,13 +29,13 @@ export const Text = styled.div`
 
 export const Button = styled.button<ButtonProps>`
     border-radius: 6px;
-    border: 1px solid ${props => props.theme.colors.primary5};
+    border: 1px solid ${props => props.theme.colors.primary2};
     color: ${props => props.theme.colors.secondary};
     margin-left: auto;
     padding: 0.85rem 1.9rem;
 
     ${props => props.primary && css`
-        background: ${props => props.theme.colors.primary5};
+        background: ${props => props.theme.colors.primary2};
     `}
 `;
 

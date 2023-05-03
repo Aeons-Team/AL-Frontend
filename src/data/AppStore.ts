@@ -4,12 +4,16 @@ import { Vector2 } from 'three'
 
 interface AppStoreState {
     cursor: Vector2,
-    scrollUI: number
+    scrollUI: number,
+    instanceId: number,
+    contracts: any[] | null
 }
 
 export const useAppStore = create<AppStoreState>((set) => ({
     cursor: new Vector2(0, 0),
-    scrollUI: 0
+    scrollUI: 0,
+    instanceId: -1,
+    contracts: null
 }))
 
 export function useAppStoreShallow<T>(selector: (state: AppStoreState) => T) {
