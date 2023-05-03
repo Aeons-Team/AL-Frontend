@@ -3,11 +3,15 @@ import { shallow } from 'zustand/shallow'
 import { Vector2 } from 'three'
 
 interface AppStoreState {
-    cursor: Vector2
+    cursor: Vector2,
+    scrollUI: number
 }
 
 export const useAppStore = create<AppStoreState>((set) => ({
-    cursor: new Vector2(0, 0)
+    cursor: new Vector2(0, 0),
+    scrollUI: 0
 }))
 
-export const useAppStoreShallow = (selector: (state: AppStoreState) => Partial<AppStoreState>) => useAppStore(selector, shallow)
+export function useAppStoreShallow<T>(selector: (state: AppStoreState) => T) {
+    return useAppStore<T>(selector, shallow)
+}
