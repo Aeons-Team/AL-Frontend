@@ -3,11 +3,10 @@ import { useFrame } from '@react-three/fiber'
 import { PerspectiveCamera, OrbitControls, SoftShadows } from '@react-three/drei'
 import { Physics, usePlane, useBox, Triplet } from '@react-three/cannon'
 import { InstancedMesh, Mesh, Vector3, PerspectiveCamera as ThreePerspectiveCamera } from 'three'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useAppStore } from '../../data/AppStore'
 import { theme } from '../../data/ThemeContext'
 
-function Blocks({ count, size, scrollRef }: { count: number, size: number, scrollRef: any }) {
+function Blocks({ count, size }: { count: number, size: number }) {
     const [initial, destination] = useMemo(() => {
         const initial: Vector3[] = []
         const destination: Vector3[] = []
@@ -45,7 +44,7 @@ function Blocks({ count, size, scrollRef }: { count: number, size: number, scrol
         const positions = positionsRef.current 
 
         for (let i = 0; i < count; ++i) {
-            const mag = scrollRef.current * 5
+            const mag = useAppStore.getState().scrollUI * 5
             const force = destination[i].clone().sub(new Vector3(...positions[i])).normalize().multiplyScalar(mag)
 
             api.at(i).applyForce(force.toArray(), [0, 0, 0])
@@ -73,26 +72,12 @@ function Ground({ size }: { size: number }) {
 
 export default function Scene() {
     const cameraRef = useRef<ThreePerspectiveCamera>(null)
-    const scrollRef = useRef<number>(0)
-
-    useLayoutEffect(() => {
-
-
-        ScrollTrigger.create({
-            trigger: "#ui",
-            start: "top top",
-            end: "bottom bottom",
-            onUpdate: self => {
-                scrollRef.current = self.progress
-            }
-        });
-    }, [])
 
     useFrame(() => {
         const camera = cameraRef.current
         
         if (camera) {
-            camera.position.y = 5 + scrollRef.current * 6
+            camera.position.y = 5 + useAppStore.getState().scrollUI * 6
             camera.position.lerp(camera.position, 0.1)
         }
     })
@@ -123,7 +108,7 @@ export default function Scene() {
 
             <Physics gravity={[0, -1, 0]}>
                 <Ground size={100} />
-                <Blocks count={100} size={0.2} scrollRef={scrollRef} />
+                <Blocks count={100} size={0.2} />
             </Physics>
         </>
     )

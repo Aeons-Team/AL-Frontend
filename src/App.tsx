@@ -18,6 +18,15 @@ function App() {
 
     document.addEventListener('mousemove', onMouseMove)
 
+    ScrollTrigger.create({
+      trigger: '#ui',
+      start: 'top top',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        useAppStore.setState({ scrollUI: self.progress })
+      }
+    })
+
     return () => {
       document.removeEventListener('mousemove', onMouseMove)
     }
