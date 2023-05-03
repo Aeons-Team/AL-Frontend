@@ -8,7 +8,7 @@ export default function Navbar() {
             <S.Navbar>
                 <S.NavItem>
                     <Icon name='home' height='1.25rem' width='1.25rem' />
-                    Home
+                    Aeons
                 </S.NavItem>
                 
                 <S.NavItem>
