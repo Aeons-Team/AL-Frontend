@@ -4,10 +4,7 @@ import { ThemeContext } from 'styled-components'
 export const theme = {
     colors: {
         primary: '#18161d',
-        primary2: '#221f28',
-        primary3: '#27252e',
-        primary4: '#2c2932',
-        primary5: '#0A090C',
+        primary2: '#0A090C',
         secondary: '#ffffff',
         active: '#5c3bef',
         chatMessage: '#4453f6',

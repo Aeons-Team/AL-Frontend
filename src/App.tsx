@@ -1,19 +1,19 @@
 import { useEffect } from 'react'
+import gsap from 'gsap'
+import { Vector2 } from 'three'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import axios from 'axios'
 import { useAppStore } from './data/AppStore'
 import Canvas from './components/Canvas'
 import UI from './components/UI'
 import Chat from './components/Chat'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   useEffect(() => {
-    const cursor = useAppStore.getState().cursor
-
     const onMouseMove = (e: MouseEvent) => {
-      cursor.set(e.clientX, e.clientY)
+      useAppStore.setState({ cursor: new Vector2(e.clientX, e.clientY) })
     }
 
     document.addEventListener('mousemove', onMouseMove)
@@ -26,6 +26,9 @@ function App() {
         useAppStore.setState({ scrollUI: self.progress })
       }
     })
+
+    axios.get(`${import.meta.env.VITE_PUBLIC_WARP_GATEWAY_URL}/contracts-by-source?id=${import.meta.env.VITE_PUBLIC_CONTRACT_SOURCE}`)
+      .then((res) => useAppStore.setState({ contracts: res.data.contracts }))
 
     return () => {
       document.removeEventListener('mousemove', onMouseMove)

@@ -13,7 +13,7 @@ export const Navbar = styled.div`
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	background: ${props => props.theme.colors.primary5};
+	background: ${props => props.theme.colors.primary2};
 	border-radius: 12px;
 	width: 90vw;
 	max-width: 700px;
@@ -22,7 +22,7 @@ export const Navbar = styled.div`
 `
 
 export const NavItem = styled.div`
-    background: ${props => props.theme.colors.primary5};
+    background: ${props => props.theme.colors.primary2};
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
 	font-size: 0.8rem;
 	display: flex;

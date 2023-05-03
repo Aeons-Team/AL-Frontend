@@ -1,8 +1,9 @@
 import { useLayoutEffect, useMemo, useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
-import { PerspectiveCamera, OrbitControls, SoftShadows } from '@react-three/drei'
+import { useFrame, ThreeEvent } from '@react-three/fiber'
+import { PerspectiveCamera, SoftShadows } from '@react-three/drei'
 import { Physics, usePlane, useBox, Triplet } from '@react-three/cannon'
-import { InstancedMesh, Mesh, Vector3, PerspectiveCamera as ThreePerspectiveCamera } from 'three'
+import { InstancedMesh, Mesh, Vector3, Matrix4 } from 'three'
+import { damp3 } from 'maath/easing'
 import { useAppStore } from '../../data/AppStore'
 import { theme } from '../../data/ThemeContext'
 
@@ -51,10 +52,18 @@ function Blocks({ count, size }: { count: number, size: number }) {
         }
     })
 
+    const onPointerEnter = (e: ThreeEvent<PointerEvent>) => {
+        useAppStore.setState({ instanceId: e.instanceId })
+    }
+
+    const onPointerLeave = (e: ThreeEvent<PointerEvent>) => {
+        useAppStore.setState(state => ({ instanceId: (state.instanceId == e.instanceId ? -1 : state.instanceId) }))
+    }
+
     return (
-        <instancedMesh castShadow receiveShadow ref={ref} args={[undefined, undefined, count]}>
+        <instancedMesh castShadow receiveShadow ref={ref} args={[undefined, undefined, count]} onPointerEnter={onPointerEnter} onPointerLeave={onPointerLeave}>
             <boxGeometry args={[size, size, size]} />
-            <meshLambertMaterial color={theme.colors.primary} />
+            <meshStandardMaterial color={theme.colors.primary} roughness={0.8} metalness={0.4} />
         </instancedMesh>
     )
 }
@@ -65,20 +74,26 @@ function Ground({ size }: { size: number }) {
     return (
         <mesh receiveShadow ref={ref} rotation={[-Math.PI * 0.5, 0, 0]}>
             <planeGeometry args={[size, size]} />
-            <shadowMaterial transparent opacity={0.8} />
+            <meshStandardMaterial color={theme.colors.primary} roughness={0.95} metalness={0.1} />
         </mesh>
     )
 }
 
 export default function Scene() {
-    const cameraRef = useRef<ThreePerspectiveCamera>(null)
+    useFrame((state, delta) => {
+        const camera = state.camera
+        state.events.update()
 
-    useFrame(() => {
-        const camera = cameraRef.current
-        
         if (camera) {
-            camera.position.y = 5 + useAppStore.getState().scrollUI * 6
-            camera.position.lerp(camera.position, 0.1)
+            const cameraTo = new Vector3(
+                state.pointer.x * 0.4,
+                2.5 + state.pointer.y * 0.4,
+                3
+            )
+
+            damp3(camera.position, cameraTo, 0.5, delta)
+
+            camera.lookAt(new Vector3())
         }
     })
 
@@ -86,11 +101,10 @@ export default function Scene() {
         <>
             <color attach='background' args={[theme.colors.primary]} />
 
-            <PerspectiveCamera ref={cameraRef} makeDefault position={[0, 5, 0]} />
-            <OrbitControls />
+            <PerspectiveCamera makeDefault position={[0, 2.5, 3]} />
 
             <ambientLight 
-                intensity={0.2} 
+                intensity={0.3} 
                 color={[0, 0.5, 0.7]} />
 
             <directionalLight 
@@ -98,11 +112,17 @@ export default function Scene() {
                 shadow-mapSize-width={1024}
                 shadow-mapSize-height={1024}
                 position={[4, 2, -2]} 
-                intensity={4} />
+                intensity={1.1} />
+
+            <directionalLight 
+                castShadow 
+                color={theme.colors.active}
+                position={[-2, 0.4, 0]} 
+                intensity={2.5} />
 
             <pointLight 
                 position={[-2, -2, 0]} 
-                intensity={2} />
+                intensity={0.75} />
 
             <SoftShadows size={30} focus={0} samples={20} />
 
