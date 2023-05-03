@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const Hero = styled.div`
     padding: 5rem 6rem;
+    height: 100vh;
     @media (max-width: 820px) {
         padding: 5rem 2rem;
     }
