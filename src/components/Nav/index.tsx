@@ -11,8 +11,14 @@ export default function Navbar() {
                     Home
                 </S.NavItem>
                 
-                <S.NavItem>Features</S.NavItem>
-                <S.NavItem>Pricing</S.NavItem>
+                <S.NavItem>
+                    <Icon name='features' height='1.25rem' width='1.25rem' />
+                    Features
+                </S.NavItem>
+                <S.NavItem>
+                    <Icon name='pricing' height='1.25rem' width='1.25rem' />
+                    Pricing
+                </S.NavItem>
             </S.Navbar>
         </S.NavbarWrapper>
     )
