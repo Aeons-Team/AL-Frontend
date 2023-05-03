@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import Icon from '../Icon'
 
 interface ChatMessageParams {
     from?: string
@@ -38,18 +40,24 @@ export const ChatMessages = styled.div`
     padding: 1rem 0.5rem;
 `
 
-export const Chat = styled.div`
+export const ChatIcon = styled(Icon)`
     position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 400px;
-    height: 500px;
-    background-color: black;
-    border-radius: 0.5rem;
-    padding-bottom: 0.5rem;
-    box-shadow: 0 0 5px 0 #00000044;
+    right: 3.45rem;
+    bottom: 3.4rem;
+`
+
+export const ChatBg = styled(motion.div)`
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: ${props => props.theme.colors.primary2};
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 100%;
+`
+
+export const Chat = styled(motion.div)`
+
 `
 

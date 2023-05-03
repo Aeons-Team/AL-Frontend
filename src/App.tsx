@@ -39,7 +39,7 @@ function App() {
     <>
       <Canvas />
       <UI />
-      {/* <Chat /> */}
+      <Chat />
     </>
   )
 }

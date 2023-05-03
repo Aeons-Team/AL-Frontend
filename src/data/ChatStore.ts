@@ -11,6 +11,8 @@ interface ChatState {
     messages: Message[],
     currentMessage: string | null,
     disableInput: boolean,
+    initialized: boolean,
+    enabled: boolean,
     socket: Socket | null,
     initialize: Function,
     sendMessage: (text: string) => void
@@ -20,6 +22,8 @@ export const useChatStore = create<ChatState>((set, get) => ({
     messages: [],
     currentMessage: null,
     disableInput: false,
+    initialized: false,
+    enabled: false,
     socket: null,
     initialize: () => {
         const socket = io(import.meta.env.VITE_PUBLIC_API_URL)
