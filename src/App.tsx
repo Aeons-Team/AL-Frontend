@@ -19,15 +19,15 @@ function App() {
     document.addEventListener('mousemove', onMouseMove)
 
     ScrollTrigger.create({
-      trigger: '#ui',
+      trigger: '#canvas',
       start: 'top top',
-      end: 'bottom bottom',
+      end: 'bottom top',
       onUpdate: (self) => {
-        useAppStore.setState({ scrollUI: self.progress })
+        useAppStore.setState({ scrollCanvas: self.progress })
       }
     })
 
-    axios.get(`${import.meta.env.VITE_PUBLIC_WARP_GATEWAY_URL}/contracts-by-source?id=${import.meta.env.VITE_PUBLIC_CONTRACT_SOURCE}`)
+    axios.get(`${import.meta.env.VITE_PUBLIC_WARP_GATEWAY_URL}/contracts-by-source?id=${import.meta.env.VITE_PUBLIC_CONTRACT_SOURCE}&limit=169`)
       .then((res) => useAppStore.setState({ contracts: res.data.contracts }))
 
     return () => {
@@ -39,7 +39,7 @@ function App() {
     <>
       <Canvas />
       <UI />
-      {/* <Chat /> */}
+      <Chat />
     </>
   )
 }

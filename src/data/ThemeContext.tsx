@@ -6,9 +6,12 @@ export const theme = {
         primary: '#18161d',
         primary2: '#0A090C',
         secondary: '#ffffff',
+        black: '#000000',
         active: '#5c3bef',
         chatMessage: '#4453f6',
         primary3d: '#0c0a0e',
+        active3d: '#6130ff',
+        activeLight3d: '#e1cfff',
         background: '#0a080b'
     }
 }

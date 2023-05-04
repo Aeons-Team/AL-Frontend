@@ -23,7 +23,7 @@ export const Navbar = styled.div`
 
 export const NavItem = styled.div`
     background: ${props => props.theme.colors.primary2};
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
 	font-size: 0.8rem;
 	display: flex;
 	flex-direction: row;

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const Hero = styled.div`
     padding: 5rem 6rem;
-    height: 80vh;
+    height: 200vh;
     @media (max-width: 820px) {
         padding: 5rem 2rem;
     }
@@ -72,6 +72,6 @@ export const SideText = styled.div<SideTextProps>`
 
 export const Span = styled.span`
     color: ${props => props.theme.colors.active};
-    }
+    font-weight: 400;
 `;   
 
