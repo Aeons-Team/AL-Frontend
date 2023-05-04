@@ -1,17 +1,19 @@
 import { useRef, useLayoutEffect, useEffect } from 'react'
 import { useChatStore, useChatStoreShallow } from '../../data/ChatStore'
+import { theme } from '../../data/ThemeContext'
 import Icon from '../Icon'
 import * as S from './style'
 
 export default function Chat() {
-    const { initialize, initialized, enabled, messages, currentMessage, disableInput, sendMessage } = useChatStoreShallow(state => ({
+    const { initialize, initialized, enabled, messages, currentMessage, disableInput, sendMessage, connected } = useChatStoreShallow(state => ({
         initialize: state.initialize,
         initialized: state.initialized,
         enabled: state.enabled,
         messages: state.messages,
         currentMessage: state.currentMessage,
         disableInput: state.disableInput,
-        sendMessage: state.sendMessage
+        sendMessage: state.sendMessage,
+        connected: state.connected
     }))
 
     const inputRef = useRef<HTMLInputElement>(null)
@@ -57,17 +59,26 @@ export default function Chat() {
 
     const chatInnerVariants = {
         disabled: {
-            width: 0
+            width: 0,
+            transition: theme.chatTransition
         },
 
         enabled: {
             width: 450,
             maxWidth: '100vw',
-            transition: {
-                type: 'spring',
-                stiffness: 150,
-                damping: 19
-            }
+            transition: theme.chatTransition
+        }
+    }
+
+    const avaStatusTransition = {
+        online: {
+            backgroundColor: theme.colors.green,
+            transition: theme.chatTransition
+        },
+
+        offline: {
+            backgroundColor: theme.colors.red,
+            transition: theme.chatTransition
         }
     }
 
@@ -81,7 +92,12 @@ export default function Chat() {
                 enabled &&
                 <S.ChatInner variants={chatInnerVariants}>
                     <S.Ava>
-                        
+                        <S.AvaStatus variants={avaStatusTransition} initial='offline' animate={connected ? 'online' : 'offline'} />
+                        <S.AvaName>Ava</S.AvaName>
+
+                        <S.Close onClick={() => useChatStore.setState({ enabled: false })}>
+                            <Icon name='cross' width='0.75rem' height='0.75rem' />
+                        </S.Close>
                     </S.Ava>
 
                     <S.ChatMessages>
@@ -96,7 +112,12 @@ export default function Chat() {
                         }
                     </S.ChatMessages>
 
-                    <S.ChatInput ref={inputRef} disabled={disableInput} onKeyDown={(e) => e.key == 'Enter' && send()} />
+                    <S.ChatInputParent>
+                        <S.ChatInput ref={inputRef} disabled={disableInput} onKeyDown={(e) => e.key == 'Enter' && send()} />
+                        <S.ChatSend onClick={send}>
+                            <Icon name='send' width='0.9rem' height='0.9rem' />
+                        </S.ChatSend>
+                    </S.ChatInputParent>
                 </S.ChatInner>
             }
         </S.Chat>

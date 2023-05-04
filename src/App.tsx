@@ -10,6 +10,7 @@ import UI from './components/UI'
 import Chat from './components/Chat'
 import BlockInfo from './components/BlockInfo'
 import { sceneConfig } from './components/Scene'
+import { theme } from './data/ThemeContext'
 import * as S from './AppStyles'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -43,17 +44,14 @@ function App() {
 
   const appMainVariants = {
     normal: {
-      x: 0
+      x: 0,
+      transition: theme.chatTransition
     },
     
     chatEnabled: {
       x: -Math.min(450, window.innerWidth),
       opacity: 0.5,
-      transition: {
-        type: 'spring',
-        stiffness: 150,
-        damping: 19
-      }
+      transition: theme.chatTransition
     }
   }
 
