@@ -9,7 +9,21 @@ export default function Features() {
 
             <S.BottomText>
                 Aeons lets you <S.Span>create</S.Span> folders, <S.Span>move</S.Span> files between them,<br /> <S.Span>rename</S.Span> your files and much more!
-            </S.BottomText> 
+            </S.BottomText>
+
+            <S.Tablet>
+                <S.Buttonone>
+                </S.Buttonone>
+                <S.Buttontwo>
+                </S.Buttontwo>
+            </S.Tablet>
+            
+            <S.Phone>
+                <S.Buttonone>
+                </S.Buttonone>
+                <S.Buttontwo>
+                </S.Buttontwo>
+            </S.Phone> 
 
             <S.SideText>
                 All operations are<br/>

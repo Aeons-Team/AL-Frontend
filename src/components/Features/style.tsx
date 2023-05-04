@@ -31,6 +31,88 @@ export const BottomText = styled.div`
     }
 `;
 
+export const Tablet = styled.div`
+    border-radius: 40px;
+    background: red;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    width: 30vw;
+    height: 40vh;
+    position: relative;
+    top: 0;
+    right: 4px;
+    @media (max-width: 820px) {
+        width: 90vw;
+        height: 45vh;
+    }
+    // @media (max-width: 550px) {
+    //     width: 70vw;
+    //     height: 60vh;    
+    // }
+`;
+
+export const Phone = styled.div`
+    border-radius: 40px;
+    background: pink;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    width: 10vw;
+    height: 35vh;
+    position: relative;
+    top: 0;
+    right: 4px;
+
+    @media (max-width: 820px) {
+        width: 40vw;
+        height: 40vh;
+    }
+    // @media (max-width: 550px) {
+    //     width: 30vw;
+    //     height: 50vh;
+    // }
+    
+`;
+
+export const Buttonone = styled.div`
+
+    height: 50px;
+    width: 5px;
+    background-color: green;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    right: -4px;
+    top: 20%;
+
+    @media (max-width: 820px) {
+        height: 100px;
+        top: 20%;
+    }
+    @media (max-width: 550px) {
+        height: 50px;
+        top: 20%;
+    }
+`;
+
+export const Buttontwo = styled.div`
+
+    height: 30px;
+    width: 5px;
+    background-color: green;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    right: -4px;
+    top: 35%;
+
+    @media (max-width: 820px) {
+        height: 60px;
+        top: 40%;
+    }
+    @media (max-width: 550px) {
+        height: 30px;
+        top: 35%;
+    }
+`;
+
 export const SideText = styled.div`
     position: absolute;
     padding: 8rem 6rem;
