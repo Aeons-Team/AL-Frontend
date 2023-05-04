@@ -4,6 +4,7 @@ import { ThreeEvent, useFrame } from '@react-three/fiber'
 import { useBox, Triplet } from '@react-three/cannon'
 import { InstancedMesh, Vector3 } from 'three'
 import { useAppStore } from '../../data/AppStore'
+import { useChatStore } from '../../data/ChatStore'
 import { theme } from '../../data/ThemeContext'
 
 const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref) => {
@@ -23,6 +24,8 @@ const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref
     }, [])
 
     const onPointerEnter = (e: ThreeEvent<PointerEvent>) => {
+        if (useChatStore.getState().enabled) return
+
         useAppStore.setState({ instanceId: e.instanceId })
     }
 
@@ -48,7 +51,7 @@ const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref
     return (
         <instancedMesh ref={mergeRefs([ref, ref2])} castShadow receiveShadow args={[undefined, undefined, count]} onPointerEnter={onPointerEnter} onPointerLeave={onPointerLeave}>
             <boxGeometry args={[size, size, size]} />
-            <meshStandardMaterial color={theme.colors.active3d} roughness={0.75} metalness={0.5} />
+            <meshStandardMaterial color={theme.colors.object3d} roughness={0.75} metalness={0.5} />
         </instancedMesh>
     )
 })

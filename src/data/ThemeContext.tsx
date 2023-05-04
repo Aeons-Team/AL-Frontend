@@ -12,6 +12,7 @@ export const theme = {
         primary3d: '#0c0a0e',
         active3d: '#6130ff',
         activeLight3d: '#e1cfff',
+        object3d: '#6326f0',
         background: '#0a080b'
     }
 }

@@ -2,10 +2,11 @@ import styled from 'styled-components'
 
 export const NavbarWrapper = styled.div`
 	position: fixed;
-	bottom: 2rem;
+	top: 90vh;
 	display: flex;
 	justify-content: center;
 	width: 100%;
+	pointer-events: none;
 `
 
 export const Navbar = styled.div`
@@ -19,6 +20,7 @@ export const Navbar = styled.div`
 	max-width: 700px;
 	overflow: hidden;
 	padding: 1.5rem 4rem;
+	pointer-events: auto;
 `
 
 export const NavItem = styled.div`
@@ -29,6 +31,12 @@ export const NavItem = styled.div`
 	flex-direction: row;
 	align-items: center;
 	gap: 0.5rem;
+	pointer-events: auto;
+	cursor: pointer;
+`
+
+export const NavItemText = styled.span`
+
 `
 
 

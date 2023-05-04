@@ -6,11 +6,12 @@ import { Vector3, Raycaster, Mesh, InstancedMesh, Object3D, CatmullRomCurve3, Po
 import { damp3, damp } from 'maath/easing'
 import { theme } from '../../data/ThemeContext'
 import { useAppStore } from '../../data/AppStore'
+import { useChatStore } from '../../data/ChatStore'
 import Ground from '../Ground'
 import Blocks from '../Blocks'
 
 export const sceneConfig = {
-    blocks: 225
+    blocks: 169
 }
 
 export default function Scene() {
@@ -19,8 +20,8 @@ export default function Scene() {
     const pullLightRef = useRef<PointLight>(null)
     const cameraParentRef = useRef<Object3D>(null)
     const curve = useMemo(() => new CatmullRomCurve3([
-        new Vector3(0, 2.5, 3),        
-        new Vector3(1.5, 1.5, 1.5)        
+        new Vector3(2.5, 2.5, 2.5),        
+        new Vector3(1.5, 1.5, 0)        
     ]), [])
 
     useFrame((state, delta) => {
@@ -54,20 +55,23 @@ export default function Scene() {
 
         const cameraParent = cameraParentRef.current
         const scroll = useAppStore.getState().scrollCanvas
+        const chatEnabled = useChatStore.getState().enabled
 
-        if (cameraParent) {
-            const cameraParentTo = curve.getPoint(scroll)
-            damp3(cameraParent.position, cameraParentTo, 0.5, delta)
+        if (!chatEnabled) {
+            if (cameraParent) {
+                const cameraParentTo = curve.getPoint(scroll)
+                damp3(cameraParent.position, cameraParentTo, 0.5, delta)
+            }
+    
+            const cameraTo = new Vector3(
+                state.pointer.x * 0.6,
+                Math.max(-1.0, state.pointer.y) * 0.6,
+                0
+            )
+    
+            damp3(camera.position, cameraTo, 0.5, delta)
         }
-
-        const cameraTo = new Vector3(
-            state.pointer.x * 0.6,
-            Math.max(-1.0, state.pointer.y) * 0.6,
-            0
-        )
-
-        damp3(camera.position, cameraTo, 0.5, delta)
-
+        
         camera.lookAt(new Vector3())
     })
 
@@ -75,7 +79,7 @@ export default function Scene() {
         <>
             <color attach='background' args={[theme.colors.primary]} />
 
-            <object3D ref={cameraParentRef} position={[0, 2.5, 3]}>
+            <object3D ref={cameraParentRef} position={[2.5, 2.5, 2.5]}>
                 <PerspectiveCamera makeDefault />
             </object3D>
 
@@ -96,7 +100,7 @@ export default function Scene() {
                 shadow-mapSize-height={256}
                 color={theme.colors.active3d}
                 position={[-2, 0.4, 0]} 
-                intensity={1} />
+                intensity={1.5} />
 
             <directionalLight 
                 castShadow 
@@ -107,11 +111,11 @@ export default function Scene() {
                 intensity={0.75} />
 
             <pointLight 
-                position={[-0.5, 1, 0.5]} 
+                position={[0.75, 1, 0.75]} 
                 decay={20}
                 distance={4}
                 color={theme.colors.active3d}
-                intensity={500} />
+                intensity={1000} />
 
             <pointLight 
                 ref={pullLightRef}

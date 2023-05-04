@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import Icon from '../Icon'
 
 interface ChatMessageParams {
     from?: string
 }
 
 export const ChatInput = styled.input`
-    width: calc(100% - 2rem);
+    width: 100%;
     align-self: center;
     border: none;
     outline: none;
@@ -16,6 +15,7 @@ export const ChatInput = styled.input`
     background-color: ${props => props.theme.colors.primary};
     color: ${props => props.theme.colors.secondary};
     justify-self: flex-end;
+    margin-top: 0.5rem;
 `
 
 export const ChatMessage = styled.div<ChatMessageParams>`
@@ -38,38 +38,52 @@ export const ChatMessages = styled.div`
     gap: 0.5rem;
     overflow-y: auto;
     padding: 1rem 0.5rem;
+
+    &::-webkit-scrollbar {
+        background: none;
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background-color: ${props => props.theme.colors.chatMessage};
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: ${props => props.theme.colors.chatMessage + 'aa'};
+    }
 `
 
-export const ChatIcon = styled(Icon)`
-    position: fixed;
-    right: 3.45rem;
-    bottom: 3.4rem;
-    pointer-events: none;
-`
-
-export const ChatBg = styled(motion.div)`
+export const ChatToggler = styled(motion.div)`
     position: fixed;
     right: 2rem;
     bottom: 2rem;
     width: 4rem;
     height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: ${props => props.theme.colors.primary2};
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
     border-radius: 100%;
+    cursor: pointer;
 `
 
-export const ChatInner = styled.div`
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+export const Ava = styled.div`
+    height: 100px;
+    background-color: blue;
+`
+
+export const ChatInner = styled(motion.div)`
     height: 100vh;
     display: flex;
     flex-direction: column;
     z-index: 5;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
 `
 
 export const Chat = styled(motion.div)`
-
+    position: fixed;
+    right: 0;
+    top: 0;
 `

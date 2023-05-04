@@ -8,16 +8,16 @@ export default function Navbar() {
             <S.Navbar>
                 <S.NavItem>
                     <Icon name='home' height='1.25rem' width='1.25rem' />
-                    Aeons
+                    <S.NavItemText>Aeons</S.NavItemText>
                 </S.NavItem>
                 
                 <S.NavItem>
                     <Icon name='features' height='1.25rem' width='1.25rem' />
-                    Features
+                    <S.NavItemText>Features</S.NavItemText>
                 </S.NavItem>
                 <S.NavItem>
                     <Icon name='pricing' height='1.25rem' width='1.25rem' />
-                    Pricing
+                    <S.NavItemText>Pricing</S.NavItemText>
                 </S.NavItem>
             </S.Navbar>
         </S.NavbarWrapper>

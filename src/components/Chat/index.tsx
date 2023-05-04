@@ -1,5 +1,6 @@
-import { useRef, useLayoutEffect } from 'react'
+import { useRef, useLayoutEffect, useEffect } from 'react'
 import { useChatStore, useChatStoreShallow } from '../../data/ChatStore'
+import Icon from '../Icon'
 import * as S from './style'
 
 export default function Chat() {
@@ -21,6 +22,10 @@ export default function Chat() {
         }
     }, [enabled, initialized])
 
+    useEffect(() => {
+        document.documentElement.style.overflowY = enabled ? 'hidden' : 'auto'
+    }, [enabled])
+
     const send = () => {
         const input = inputRef.current
 
@@ -32,23 +37,7 @@ export default function Chat() {
         }
     }
 
-    const chatBgVariants = {
-        disabled: {
-            cursor: 'pointer'
-        },
-
-        enabled: {
-            scale: 60,
-            cursor: 'default',
-            transition: {
-                ease: [.77,0,.3,.99],
-                duration: 0.6,
-                delay: 0.1
-            }
-        }
-    }
-
-    const chatIconvariants = {
+    const togglerVariants = {
         disabled: {
             opacity: 1,
             y: 0
@@ -66,15 +55,35 @@ export default function Chat() {
         }
     }
 
+    const chatInnerVariants = {
+        disabled: {
+            width: 0
+        },
+
+        enabled: {
+            width: 450,
+            maxWidth: '100vw',
+            transition: {
+                type: 'spring',
+                stiffness: 150,
+                damping: 19
+            }
+        }
+    }
+
     return (
         <S.Chat onClick={onChatBgClick} initial={'disabled'} animate={enabled ? 'enabled' : 'disabled'}>
-            <S.ChatBg variants={chatBgVariants} />
-            
-            <S.ChatIcon variants={chatIconvariants} name='chat' width='1rem' height='1rem' />
+            <S.ChatToggler variants={togglerVariants}>
+                <Icon name='chat' width='1rem' height='1rem' />
+            </S.ChatToggler>
 
             {
                 enabled &&
-                <S.ChatInner>
+                <S.ChatInner variants={chatInnerVariants}>
+                    <S.Ava>
+                        
+                    </S.Ava>
+
                     <S.ChatMessages>
                         {
                             messages.map((message, i) => (
