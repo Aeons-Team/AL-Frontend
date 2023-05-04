@@ -5,7 +5,7 @@ export const NavbarWrapper = styled.div`
 	bottom: 2rem;
 	display: flex;
 	justify-content: center;
-	width: 100vw;
+	width: 100%;
 `
 
 export const Navbar = styled.div`

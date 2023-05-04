@@ -74,7 +74,7 @@ export default function Chat() {
 
             {
                 enabled &&
-                <>
+                <S.ChatInner>
                     <S.ChatMessages>
                         {
                             messages.map((message, i) => (
@@ -88,7 +88,7 @@ export default function Chat() {
                     </S.ChatMessages>
 
                     <S.ChatInput ref={inputRef} disabled={disableInput} onKeyDown={(e) => e.key == 'Enter' && send()} />
-                </>
+                </S.ChatInner>
             }
         </S.Chat>
     )

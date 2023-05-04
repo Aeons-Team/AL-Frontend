@@ -7,6 +7,7 @@ import { useAppStore } from './data/AppStore'
 import Canvas from './components/Canvas'
 import UI from './components/UI'
 import Chat from './components/Chat'
+import { sceneConfig } from './components/Scene'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -27,7 +28,7 @@ function App() {
       }
     })
 
-    axios.get(`${import.meta.env.VITE_PUBLIC_WARP_GATEWAY_URL}/contracts-by-source?id=${import.meta.env.VITE_PUBLIC_CONTRACT_SOURCE}&limit=169`)
+    axios.get(`${import.meta.env.VITE_PUBLIC_WARP_GATEWAY_URL}/contracts-by-source?id=${import.meta.env.VITE_PUBLIC_CONTRACT_SOURCE}&limit=${sceneConfig.blocks}`)
       .then((res) => useAppStore.setState({ contracts: res.data.contracts }))
 
     return () => {

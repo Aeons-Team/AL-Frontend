@@ -58,7 +58,18 @@ export const ChatBg = styled(motion.div)`
     border-radius: 100%;
 `
 
+export const ChatInner = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    padding: 1rem;
+`
+
 export const Chat = styled(motion.div)`
 
 `
-

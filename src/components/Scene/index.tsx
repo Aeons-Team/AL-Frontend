@@ -9,6 +9,10 @@ import { useAppStore } from '../../data/AppStore'
 import Ground from '../Ground'
 import Blocks from '../Blocks'
 
+export const sceneConfig = {
+    blocks: 225
+}
+
 export default function Scene() {
     const groundRef = useRef<Mesh>(null)
     const blocksRef = useRef<InstancedMesh>(null)
@@ -16,7 +20,7 @@ export default function Scene() {
     const cameraParentRef = useRef<Object3D>(null)
     const curve = useMemo(() => new CatmullRomCurve3([
         new Vector3(0, 2.5, 3),        
-        new Vector3(3, 1.5, 0)        
+        new Vector3(1.5, 1.5, 1.5)        
     ]), [])
 
     useFrame((state, delta) => {
@@ -115,11 +119,11 @@ export default function Scene() {
                 decay={3}
                 distance={2} />
 
-            <SoftShadows size={5} focus={0} samples={10} />
+            <SoftShadows size={5} focus={0.25} samples={10} />
 
             <Physics gravity={[0, -1, 0]}>
                 <Ground ref={groundRef} size={100} />
-                <Blocks ref={blocksRef} count={169} size={0.2} />
+                <Blocks ref={blocksRef} count={sceneConfig.blocks} size={0.2} />
             </Physics>
         </>
     )
