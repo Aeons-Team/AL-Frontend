@@ -36,6 +36,6 @@ export default function Icon({ name, height, width }: IconProps) {
 
         )
     }
-
+    
     throw new Error('icon should have a valid name')
 }
