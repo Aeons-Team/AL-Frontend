@@ -44,6 +44,7 @@ export const ChatIcon = styled(Icon)`
     position: fixed;
     right: 3.45rem;
     bottom: 3.4rem;
+    pointer-events: none;
 `
 
 export const ChatBg = styled(motion.div)`

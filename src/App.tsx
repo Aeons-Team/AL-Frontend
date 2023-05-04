@@ -27,7 +27,7 @@ function App() {
       }
     })
 
-    axios.get(`${import.meta.env.VITE_PUBLIC_WARP_GATEWAY_URL}/contracts-by-source?id=${import.meta.env.VITE_PUBLIC_CONTRACT_SOURCE}`)
+    axios.get(`${import.meta.env.VITE_PUBLIC_WARP_GATEWAY_URL}/contracts-by-source?id=${import.meta.env.VITE_PUBLIC_CONTRACT_SOURCE}&limit=169`)
       .then((res) => useAppStore.setState({ contracts: res.data.contracts }))
 
     return () => {

@@ -25,12 +25,9 @@ const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref
 
     const positionsRef = useRef<Triplet[]>(initial.map(v => v.toArray()))
 
-    let randRot = () => (Math.random() - 0.5) * 2.0 * Math.PI
-
     const [ref2, api] = useBox<InstancedMesh>((i) => ({ 
         mass: 1, 
         position: initial[i].toArray(),
-        rotation: [randRot(), randRot(), randRot()],
         args: [size, size, size]
     }))
 
@@ -42,9 +39,10 @@ const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref
 
     useFrame(() => {
         const positions = positionsRef.current 
+        const scroll = useAppStore.getState().scrollUI
 
         for (let i = 0; i < count; ++i) {
-            const mag = useAppStore.getState().scrollUI * 5
+            const mag = useAppStore.getState().scrollUI * 4
             const force = destination[i].clone().sub(new Vector3(...positions[i])).normalize().multiplyScalar(mag)
 
             api.at(i).applyForce(force.toArray(), [0, 0, 0])
@@ -62,7 +60,7 @@ const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref
     return (
         <instancedMesh castShadow receiveShadow ref={mergeRefs([ref, ref2])} args={[undefined, undefined, count]} onPointerEnter={onPointerEnter} onPointerLeave={onPointerLeave}>
             <boxGeometry args={[size, size, size]} />
-            <meshStandardMaterial color={theme.colors.primary} roughness={0.75} metalness={0.4} />
+            <meshStandardMaterial color={theme.colors.primary} roughness={0.75} metalness={0.5} />
         </instancedMesh>
     )
 })
