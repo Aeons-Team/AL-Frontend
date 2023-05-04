@@ -1,33 +1,18 @@
-import { useLayoutEffect, useMemo, useRef, forwardRef } from 'react'
+import { useLayoutEffect, forwardRef, useRef } from 'react'
 import { mergeRefs } from 'react-merge-refs'
-import { useFrame, ThreeEvent } from '@react-three/fiber'
+import { ThreeEvent, useFrame } from '@react-three/fiber'
 import { useBox, Triplet } from '@react-three/cannon'
 import { InstancedMesh, Vector3 } from 'three'
 import { useAppStore } from '../../data/AppStore'
 import { theme } from '../../data/ThemeContext'
 
 const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref) => {
-    const [initial, destination] = useMemo(() => {
-        const initial: Vector3[] = []
-        const destination: Vector3[] = []
-        const len = Math.sqrt(count)
+    const positionsRef = useRef<Triplet[]>(new Array<Triplet>(count).fill([0, 0, 0]))
+    const rand = () => (Math.random() - 0.5) * 2
 
-        for (let i = 0; i < count; ++i) {
-            const x = (i % len) / len - 0.5
-            const z = Math.floor(i / len) / len - 0.5
-
-            initial.push(new Vector3(x * 2, Math.random() * 3.0, z * 2))
-            destination.push(new Vector3(x * 7, 0, z * 7))
-        }
-
-        return [initial, destination]   
-    }, [])
-
-    const positionsRef = useRef<Triplet[]>(initial.map(v => v.toArray()))
-
-    const [ref2, api] = useBox<InstancedMesh>((i) => ({ 
-        mass: 1, 
-        position: initial[i].toArray(),
+    const [ref2, api] = useBox<InstancedMesh>(() => ({ 
+        mass: 3, 
+        position: [rand(), rand() + 2.0, rand()],
         args: [size, size, size]
     }))
 
@@ -37,18 +22,6 @@ const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref
         }
     }, [])
 
-    useFrame(() => {
-        const positions = positionsRef.current 
-        const scroll = useAppStore.getState().scrollUI
-
-        for (let i = 0; i < count; ++i) {
-            const mag = useAppStore.getState().scrollUI * 4
-            const force = destination[i].clone().sub(new Vector3(...positions[i])).normalize().multiplyScalar(mag)
-
-            api.at(i).applyForce(force.toArray(), [0, 0, 0])
-        }
-    })
-
     const onPointerEnter = (e: ThreeEvent<PointerEvent>) => {
         useAppStore.setState({ instanceId: e.instanceId })
     }
@@ -57,10 +30,25 @@ const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref
         useAppStore.setState(state => ({ instanceId: (state.instanceId == e.instanceId ? -1 : state.instanceId) }))
     }
 
+    useFrame(() => {
+        const positions = positionsRef.current
+        const { pull, pullPoint } = useAppStore.getState()
+
+        if (pull) {
+            for (let i = 0; i < count; ++i) {
+                const position = positions[i]
+                const dir = pullPoint.clone().sub(new Vector3(...position))
+
+                const mag = Math.max(0, 1.5 - dir.length()) * 100
+                api.at(i).applyForce(dir.multiplyScalar(mag).toArray(), [0, 0, 0])
+            }
+        }
+    })
+
     return (
         <instancedMesh castShadow receiveShadow ref={mergeRefs([ref, ref2])} args={[undefined, undefined, count]} onPointerEnter={onPointerEnter} onPointerLeave={onPointerLeave}>
             <boxGeometry args={[size, size, size]} />
-            <meshStandardMaterial color={theme.colors.primary} roughness={0.75} metalness={0.5} />
+            <meshStandardMaterial color={theme.colors.active3d} roughness={0.75} metalness={0.5} />
         </instancedMesh>
     )
 })

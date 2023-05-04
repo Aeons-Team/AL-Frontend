@@ -72,6 +72,6 @@ export const SideText = styled.div<SideTextProps>`
 
 export const Span = styled.span`
     color: ${props => props.theme.colors.active};
-    }
+    font-weight: 400;
 `;   
 

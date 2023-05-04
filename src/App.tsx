@@ -19,11 +19,11 @@ function App() {
     document.addEventListener('mousemove', onMouseMove)
 
     ScrollTrigger.create({
-      trigger: '#ui',
+      trigger: '#canvas',
       start: 'top top',
-      end: 'bottom bottom',
+      end: 'bottom top',
       onUpdate: (self) => {
-        useAppStore.setState({ scrollUI: self.progress })
+        useAppStore.setState({ scrollCanvas: self.progress })
       }
     })
 
