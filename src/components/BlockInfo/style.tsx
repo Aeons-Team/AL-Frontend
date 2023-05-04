@@ -38,4 +38,6 @@ export const BlockInfo = styled(motion.div)`
     background-color: ${props => props.theme.colors.primary2};
     color: ${props => props.theme.colors.secondary};
     border-radius: 5px;
+    pointer-events: none;
+    user-select: none;
 `

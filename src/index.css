@@ -9,5 +9,23 @@
 
 body {
     overflow-x: hidden;
+    overflow-y: hidden;
     background-color: black;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(7, 7, 7);
+}
+
+body::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 3px;
+    background: #200c56;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    width: 10px;
+    border-radius: 3px;
+    background: #350ea0;
 }

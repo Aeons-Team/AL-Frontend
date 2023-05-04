@@ -4,7 +4,7 @@ interface IconProps {
     name: string 
     height: string
     width: string
-    variants: any
+    variants?: any
 }
 
 export default function Icon({ name, height, width, ...remaining }: IconProps) {

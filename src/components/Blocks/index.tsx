@@ -4,15 +4,16 @@ import { ThreeEvent, useFrame } from '@react-three/fiber'
 import { useBox, Triplet } from '@react-three/cannon'
 import { InstancedMesh, Vector3 } from 'three'
 import { useAppStore } from '../../data/AppStore'
+import { useChatStore } from '../../data/ChatStore'
 import { theme } from '../../data/ThemeContext'
 
 const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref) => {
     const positionsRef = useRef<Triplet[]>(new Array<Triplet>(count).fill([0, 0, 0]))
-    const rand = () => (Math.random() - 0.5) * 2
+    const rand = () => (Math.random() - 0.5) * 4
 
     const [ref2, api] = useBox<InstancedMesh>(() => ({ 
         mass: 3, 
-        position: [rand(), rand() + 2.0, rand()],
+        position: [rand(), rand() + 3.0, rand()],
         args: [size, size, size]
     }))
 
@@ -23,6 +24,8 @@ const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref
     }, [])
 
     const onPointerEnter = (e: ThreeEvent<PointerEvent>) => {
+        if (useChatStore.getState().enabled) return
+
         useAppStore.setState({ instanceId: e.instanceId })
     }
 
@@ -46,9 +49,9 @@ const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref
     })
 
     return (
-        <instancedMesh castShadow receiveShadow ref={mergeRefs([ref, ref2])} args={[undefined, undefined, count]} onPointerEnter={onPointerEnter} onPointerLeave={onPointerLeave}>
+        <instancedMesh ref={mergeRefs([ref, ref2])} castShadow receiveShadow args={[undefined, undefined, count]} onPointerEnter={onPointerEnter} onPointerLeave={onPointerLeave}>
             <boxGeometry args={[size, size, size]} />
-            <meshStandardMaterial color={theme.colors.active3d} roughness={0.75} metalness={0.5} />
+            <meshStandardMaterial color={theme.colors.object3d} roughness={0.75} metalness={0.5} />
         </instancedMesh>
     )
 })

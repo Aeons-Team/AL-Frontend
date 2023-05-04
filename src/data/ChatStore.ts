@@ -56,7 +56,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
 
         socket.connect()
 
-        set({ socket })
+        set({ socket, initialized: true })
     },
 
     sendMessage: (text: string) => {

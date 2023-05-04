@@ -1,20 +1,18 @@
 import * as S from './style'
-import Navbar from '../Nav'
 import Hero from '../Hero'
-import Topbar from '../Topbar'
 import Feature from '../Features'
 import Pricing from '../Pricing'
-import BlockInfo from '../BlockInfo'
+import Navbar from '../Nav'
+import Topbar from '../Topbar'
 
 export default function UI() {
 
     return (
 
         <S.UI id='ui'>
-            <Topbar /> 
-            <Hero />
             <Navbar />
-            <BlockInfo />
+            <Topbar />
+            <Hero />
             <Feature />
             <Pricing />
         </S.UI>
