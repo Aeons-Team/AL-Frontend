@@ -5,6 +5,7 @@ export default function Topbar() {
         <S.Topbar>
             <S.Text>aeons</S.Text>
             <S.Button primary>Open <S.Span>drive</S.Span></S.Button>
+            <S.Fade />
         </S.Topbar>
     )
 }

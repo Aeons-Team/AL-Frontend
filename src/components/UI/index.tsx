@@ -8,14 +8,12 @@ import Topbar from '../Topbar'
 export default function UI() {
 
     return (
-
         <S.UI id='ui'>
             <Navbar />
             <Topbar />
             <Hero />
             <Feature />
-            <Pricing />
+            {/* <Pricing /> */}
         </S.UI>
-
     )
 }

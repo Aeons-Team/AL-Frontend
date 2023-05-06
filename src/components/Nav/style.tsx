@@ -7,6 +7,7 @@ export const NavbarWrapper = styled.div`
 	justify-content: center;
 	width: 100%;
 	pointer-events: none;
+	z-index: 5;
 `
 
 export const Navbar = styled.div`

@@ -1,7 +1,10 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Features = styled.div`
     padding: 5rem 6rem;
+    background-color: red;
+    position: relative;
+    height: 100vh;
     @media (max-width: 820px) {
         padding: 5rem 2rem;
     }
@@ -28,20 +31,6 @@ export const BottomText = styled.div`
     }
     @media (max-width: 550px) {
         font-size: 1rem;
-    }
-`;
-
-export const SideText = styled.div`
-    position: absolute;
-    padding: 8rem 6rem;
-    right: 4rem;
-    @media (max-width: 820px) {
-        padding: 6rem 2rem;
-        right: 2rem;
-    }
-    @media (max-width: 550px) {
-        padding: 8rem 2rem;
-        right: 2rem;
     }
 `;
 

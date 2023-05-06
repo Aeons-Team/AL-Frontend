@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Hero = styled.div`
     padding: 5rem 6rem;
-    height: 200vh;
+    height: 100vh;
     @media (max-width: 820px) {
         padding: 5rem 2rem;
     }
@@ -14,6 +14,7 @@ export const Hero = styled.div`
 export const Title = styled.div`
     font-weight: 200;
     font-size: 4.5rem;
+    margin-top: 15vh;
     @media (max-width: 820px) {
         font-size: 5rem;
     }
@@ -30,43 +31,6 @@ export const Text = styled.p`
     }
     @media (max-width: 550px) {
         font-size: 1rem;
-    }
-`;
-
-interface SideTextProps {
-    number: number
-}
-
-export const SideText = styled.div<SideTextProps>`
-    position: absolute;
-
-    ${props => props.number == 1 && css`
-        top: 600px;
-        left: 4rem;
-    `}
-    ${props => props.number == 2 && css`
-        top: 450px;
-        right: 4rem;
-    `}
-    @media (max-width: 820px) {
-        ${props => props.number == 1 && css`
-            top: 700px;
-            left: 2rem;
-        `}
-        ${props => props.number == 2 && css`
-            top: 500px;
-            right: 2rem;
-        `}
-    }
-    @media (max-width: 550px) {
-        ${props => props.number == 1 && css`
-            top: 600px;
-            left: 2rem;
-        `}
-        ${props => props.number == 2 && css`
-            top: 400px;
-            right: 2rem;
-        `}
     }
 `;
 

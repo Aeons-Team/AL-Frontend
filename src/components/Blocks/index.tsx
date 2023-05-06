@@ -1,10 +1,9 @@
 import { useLayoutEffect, forwardRef, useRef } from 'react'
 import { mergeRefs } from 'react-merge-refs'
-import { ThreeEvent, useFrame } from '@react-three/fiber'
+import { useFrame } from '@react-three/fiber'
 import { useBox, Triplet } from '@react-three/cannon'
 import { InstancedMesh, Vector3 } from 'three'
 import { useAppStore } from '../../data/AppStore'
-import { useChatStore } from '../../data/ChatStore'
 import { theme } from '../../data/ThemeContext'
 
 const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref) => {
@@ -23,16 +22,6 @@ const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref
         }
     }, [])
 
-    const onPointerEnter = (e: ThreeEvent<PointerEvent>) => {
-        if (useChatStore.getState().enabled) return
-
-        useAppStore.setState({ instanceId: e.instanceId })
-    }
-
-    const onPointerLeave = (e: ThreeEvent<PointerEvent>) => {
-        useAppStore.setState(state => ({ instanceId: (state.instanceId == e.instanceId ? -1 : state.instanceId) }))
-    }
-
     useFrame(() => {
         const positions = positionsRef.current
         const { pull, pullPoint } = useAppStore.getState()
@@ -49,7 +38,7 @@ const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref
     })
 
     return (
-        <instancedMesh ref={mergeRefs([ref, ref2])} castShadow receiveShadow args={[undefined, undefined, count]} onPointerEnter={onPointerEnter} onPointerLeave={onPointerLeave}>
+        <instancedMesh ref={mergeRefs([ref, ref2])} castShadow receiveShadow args={[undefined, undefined, count]}>
             <boxGeometry args={[size, size, size]} />
             <meshStandardMaterial color={theme.colors.object3d} roughness={0.75} metalness={0.5} />
         </instancedMesh>

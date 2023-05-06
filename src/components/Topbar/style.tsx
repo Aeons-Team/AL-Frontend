@@ -5,7 +5,7 @@ interface ButtonProps {
 }
 
 export const Fade = styled.div`
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -16,11 +16,12 @@ export const Fade = styled.div`
 
 export const Topbar = styled.div`
     display: flex;
-    position: sticky;
+    position: fixed;
     width: 100%;
     left: 0;
     top: 0;
     padding: 1.75rem;
+    z-index: 5;
 `
 export const Text = styled.div`
     font-weight: 200;

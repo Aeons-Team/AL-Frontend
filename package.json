@@ -13,7 +13,6 @@
     "@react-three/cannon": "^6.5.2",
     "@react-three/drei": "^9.66.1",
     "@react-three/fiber": "^8.13.0",
-    "axios": "^1.4.0",
     "framer-motion": "^10.12.4",
     "gsap": "^3.11.5",
     "install": "^0.13.0",

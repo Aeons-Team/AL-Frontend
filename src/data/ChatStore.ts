@@ -96,7 +96,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
 
         if (!socket) throw new Error('attempting to send message before initializing chat')
 
-        socket.emit('message', text)
+        socket.emit('message', { text })
 
         set({ messages: [...messages, { from: 'me', text }] })
     }

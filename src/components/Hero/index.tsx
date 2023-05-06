@@ -1,4 +1,5 @@
 import * as S from './style'
+import SideText from '../SideText'
 
 export default function Hero() {
     return (
@@ -11,18 +12,14 @@ export default function Hero() {
                 Store your files <S.Span>decentralised</S.Span> and <S.Span>trustless</S.Span> with one-time payment for eons.
             </S.Text>
             
-            <S.SideText
-                number={1}
-            >
+            <SideText top='85vh' left='3rem' leftTablet='1.5rem'>
                 Seemlessly connect to your <br /> crypto wallet via<S.Span> metamask</S.Span>
-            </S.SideText>
+            </SideText>
 
-            <S.SideText
-                number={2}
-            >
+            <SideText top='65vh' right='3rem' rightTablet='1.5rem'>
                 No third parties.<br/>
                 You <S.Span>own</S.Span> and manage <br /> who sees your data.
-            </S.SideText>
+            </SideText>
         </S.Hero>
     )
 }

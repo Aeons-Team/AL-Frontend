@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Pricing = styled.div`
     padding: 5rem 6rem;

@@ -10,10 +10,6 @@ import { useChatStore } from '../../data/ChatStore'
 import Ground from '../Ground'
 import Blocks from '../Blocks'
 
-export const sceneConfig = {
-    blocks: 169
-}
-
 export default function Scene() {
     const groundRef = useRef<Mesh>(null)
     const blocksRef = useRef<InstancedMesh>(null)
@@ -127,7 +123,7 @@ export default function Scene() {
 
             <Physics gravity={[0, -1, 0]}>
                 <Ground ref={groundRef} size={100} />
-                <Blocks ref={blocksRef} count={sceneConfig.blocks} size={0.2} />
+                <Blocks ref={blocksRef} count={169} size={0.2} />
             </Physics>
         </>
     )
