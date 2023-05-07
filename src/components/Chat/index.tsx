@@ -31,7 +31,7 @@ export default function Chat() {
     const send = () => {
         const input = inputRef.current
 
-        if (input) {
+        if (input && input.value) {
             useChatStore.setState({ disableInput: true })
             sendMessage(input.value)
 

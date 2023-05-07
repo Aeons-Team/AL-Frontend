@@ -17,7 +17,7 @@ export default function Scene() {
     const cameraParentRef = useRef<Object3D>(null)
     const curve = useMemo(() => new CatmullRomCurve3([
         new Vector3(2.5, 2.5, 2.5),        
-        new Vector3(1.5, 1.5, 0)        
+        new Vector3(2.5, 0, 2.5)        
     ]), [])
 
     useFrame((state, delta) => {
@@ -73,7 +73,7 @@ export default function Scene() {
 
     return (
         <>
-            <color attach='background' args={[theme.colors.primary]} />
+            <color attach='background' args={[theme.colors.background]} />
 
             <object3D ref={cameraParentRef} position={[2.5, 2.5, 2.5]}>
                 <PerspectiveCamera makeDefault />

@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
 export const NavbarWrapper = styled.div`
-	position: fixed;
-	top: 90vh;
+	position: sticky;
+	bottom: 1rem;
 	display: flex;
 	justify-content: center;
-	width: 100%;
+    width: 100%;
 	pointer-events: none;
+	color: ${props => props.theme.colors.secondary};
 	z-index: 5;
 `
 

@@ -11,6 +11,7 @@ export const Fade = styled.div`
     width: 100%;
     height: 20vh;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
     z-index: -1;
 `
 
@@ -21,6 +22,7 @@ export const Topbar = styled.div`
     left: 0;
     top: 0;
     padding: 1.75rem;
+    pointer-events: none;
     z-index: 5;
 `
 export const Text = styled.div`
@@ -34,6 +36,8 @@ export const Button = styled.button<ButtonProps>`
     color: ${props => props.theme.colors.secondary};
     margin-left: auto;
     padding: 0.85rem 1.9rem;
+    pointer-events: auto;
+    cursor: pointer;
 
     ${props => props.primary && css`
         background: ${props => props.theme.colors.primary2};

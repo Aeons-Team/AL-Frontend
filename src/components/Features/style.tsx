@@ -4,6 +4,7 @@ export const Features = styled.div`
     padding: 5rem 6rem;
     position: relative;
     height: 100vh;
+    background-color: ${props => props.theme.colors.primary};
     @media (max-width: 820px) {
         padding: 5rem 2rem;
     }

@@ -17,6 +17,8 @@ export interface SideTextProps {
 
 export const SideText = styled.span<SideTextProps>`
     position: absolute;
+    z-index: 5;
+    
     ${props => props.top && css<SideTextProps>`
         top: ${props => props.top};
     `}
