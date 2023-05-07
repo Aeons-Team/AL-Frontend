@@ -73,7 +73,7 @@ export default function Scene() {
 
     return (
         <>
-            <color attach='background' args={[theme.colors.background]} />
+            <color attach='background' args={[theme.colors.background3d]} />
 
             <object3D ref={cameraParentRef} position={[2.5, 2.5, 2.5]}>
                 <PerspectiveCamera makeDefault />
@@ -123,7 +123,7 @@ export default function Scene() {
 
             <Physics gravity={[0, -1, 0]}>
                 <Ground ref={groundRef} size={100} />
-                <Blocks ref={blocksRef} count={169} size={0.2} />
+                <Blocks ref={blocksRef} count={100} size={0.2} />
             </Physics>
         </>
     )

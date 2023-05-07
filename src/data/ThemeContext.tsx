@@ -3,8 +3,8 @@ import { ThemeContext } from 'styled-components'
 
 export const theme = {
     colors: {
-        primary: '#121015',
-        primary2: '#0A090C',
+        primary: '#19141F',
+        primary2: '#131016',
         secondary: '#ffffff',
         black: '#000000',
         active: '#5c3bef',
@@ -13,10 +13,9 @@ export const theme = {
         active3d: '#6130ff',
         activeLight3d: '#e1cfff',
         object3d: '#510af7',
-        background: '#773AE8',
+        background3d: '#773AE8',
         textDark: '#50445f',
-        red: '#fc3d63',
-        green: '#2bed8c'
+        background: '#0F0B16'
     },
     
     chatTransition: {

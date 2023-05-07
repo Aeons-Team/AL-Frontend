@@ -11,7 +11,6 @@ export const ChatInput = styled.input`
     border-radius: 6px;
     background-color: ${props => props.theme.colors.primary};
     color: ${props => props.theme.colors.secondary};
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
     padding: 0.5rem 1rem;
     flex-grow: 1;
 `

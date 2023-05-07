@@ -5,6 +5,7 @@ import { Vector2, Vector3 } from 'three'
 interface AppStoreState {
     cursor: Vector2,
     scrollCanvas: number,
+    scrollFeatures: number,
     pull: boolean,
     pullPoint: Vector3
 }
@@ -12,6 +13,7 @@ interface AppStoreState {
 export const useAppStore = create<AppStoreState>((set) => ({
     cursor: new Vector2(0, 0),
     scrollCanvas: 0,
+    scrollFeatures: 0,
     pull: false,
     pullPoint: new Vector3(0, 0, 0)
 }))
