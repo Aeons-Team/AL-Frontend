@@ -47,31 +47,6 @@ export const Tablet = styled.div`
         width: 90vw;
         height: 45vh;
     }
-    // @media (max-width: 550px) {
-    //     width: 70vw;
-    //     height: 60vh;    
-    // }
-`;
-
-export const Phone = styled.div`
-    border-radius: 40px;
-    background: pink;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
-    width: 10vw;
-    height: 35vh;
-    position: relative;
-    top: 0;
-    right: 4px;
-
-    @media (max-width: 820px) {
-        width: 40vw;
-        height: 40vh;
-    }
-    // @media (max-width: 550px) {
-    //     width: 30vw;
-    //     height: 50vh;
-    // }
-    
 `;
 
 export const Buttonone = styled.div`

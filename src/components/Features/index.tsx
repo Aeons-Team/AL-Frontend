@@ -19,13 +19,6 @@ export default function Features() {
                 </S.Buttontwo>
             </S.Tablet>
             
-            <S.Phone>
-                <S.Buttonone>
-                </S.Buttonone>
-                <S.Buttontwo>
-                </S.Buttontwo>
-            </S.Phone> 
-
             <SideText right='2rem' top='80vh'>
                 All operations are<br/>
                 recorded into the <S.Span>blockweave</S.Span><br />

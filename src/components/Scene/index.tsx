@@ -17,7 +17,7 @@ export default function Scene() {
     const cameraParentRef = useRef<Object3D>(null)
     const curve = useMemo(() => new CatmullRomCurve3([
         new Vector3(2.5, 2.5, 2.5),        
-        new Vector3(2.5, 0, 2.5)        
+        new Vector3(4, 0.5, 4)        
     ]), [])
 
     useFrame((state, delta) => {
