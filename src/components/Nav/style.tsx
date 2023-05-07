@@ -21,13 +21,12 @@ export const Navbar = styled.div`
 	width: 90vw;
 	max-width: 700px;
 	overflow: hidden;
-	height: 4rem;
+	height: 4.5rem;
 	pointer-events: auto;
 `
 
 export const NavItem = styled.div`
     background: ${props => props.theme.colors.primary2};
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
 	font-size: 0.7rem;
 	display: flex;
 	flex-direction: row;
@@ -38,10 +37,6 @@ export const NavItem = styled.div`
 	cursor: pointer;
 	width: 33.33%;
 	height: 100%;
-
-	&:hover {
-		background-color: ${props => props.theme.colors.primary};
-	}
 `
 
 export const NavItemText = styled.span`

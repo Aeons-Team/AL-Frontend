@@ -13,7 +13,7 @@ export default function Canvas() {
 
     return (
         <S.CanvasParent id='canvas'>
-            <R3FCanvas ref={canvasRef} shadows eventSource={document.documentElement}>
+            <R3FCanvas ref={canvasRef} shadows eventSource={document.documentElement} data-scroll data-scroll-speed='1.5'>
                 <Scene />
                 <Stats />
                 { !canvasInView && <DisableRender /> }

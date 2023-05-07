@@ -37,7 +37,7 @@ export const TabletVideo = styled.video<any>`
 export const Tablet = styled.div`
     border-radius: 30px;
     background-color: ${props => props.theme.colors.primary};
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
     padding: 1.8%;
     position: relative;
     display: flex;

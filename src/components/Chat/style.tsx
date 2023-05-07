@@ -84,7 +84,7 @@ export const ChatToggler = styled(motion.div)`
     justify-content: center;
     align-items: center;
     background-color: ${props => props.theme.colors.primary2};
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
     border-radius: 100%;
     cursor: pointer;
 `
@@ -109,7 +109,7 @@ export const Close = styled.span`
     align-items: center;
     justify-content: center;
     border-radius: 100%;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
     margin-left: auto;
     position: absolute;
     right: 1.1rem;
@@ -138,5 +138,5 @@ export const Chat = styled(motion.div)`
     top: 0;
     color: ${props => props.theme.colors.secondary};
     background-color: ${props => props.theme.colors.primary2};
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
 `
