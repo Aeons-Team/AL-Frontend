@@ -1,10 +1,15 @@
+import Button from '../Button'
 import * as S from './style'
 
 export default function Topbar() {
     return (
         <S.Topbar>
             <S.Text>aeons</S.Text>
-            <S.Button primary>Open <S.Span>drive</S.Span></S.Button>
+
+            <Button primary>
+                Open <S.Span>drive</S.Span>
+            </Button>
+            
             <S.Fade />
         </S.Topbar>
     )

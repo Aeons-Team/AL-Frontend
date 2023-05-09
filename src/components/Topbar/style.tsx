@@ -1,8 +1,4 @@
-import styled,{css} from 'styled-components'
-
-interface ButtonProps {
-    primary?: boolean
-}
+import styled from 'styled-components'
 
 export const Fade = styled.div`
     position: fixed;
@@ -28,21 +24,6 @@ export const Topbar = styled.div`
 export const Text = styled.div`
     font-weight: 200;
     font-size: 1.1rem;
-`;
-
-export const Button = styled.button<ButtonProps>`
-    border-radius: 6px;
-    border: 1px solid ${props => props.theme.colors.primary2};
-    color: ${props => props.theme.colors.secondary};
-    margin-left: auto;
-    padding: 0.85rem 1.9rem;
-    pointer-events: auto;
-    cursor: pointer;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
-
-    ${props => props.primary && css`
-        background: ${props => props.theme.colors.primary2};
-    `}
 `;
 
 export const Span = styled.span`

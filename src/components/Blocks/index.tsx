@@ -8,7 +8,7 @@ import { theme } from '../../data/ThemeContext'
 
 const Blocks = forwardRef(({ count, size }: { count: number, size: number }, ref) => {
     const positionsRef = useRef<Triplet[]>(new Array<Triplet>(count).fill([0, 0, 0]))
-    const rand = () => (Math.random() - 0.5) * 4
+    const rand = () => (Math.random() - 0.5) * 3
 
     const [ref2, api] = useBox<InstancedMesh>(() => ({ 
         mass: 3, 

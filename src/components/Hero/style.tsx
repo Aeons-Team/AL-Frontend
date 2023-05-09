@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Button from '../Button';
 
 export const Hero = styled.div`
     padding: 5rem 6rem;
@@ -22,6 +23,11 @@ export const Title = styled.div`
         font-size: 3rem;
     }
 `;
+
+export const HeroButton = styled(Button)`
+    margin-top: 1.5rem;
+    padding: 1rem 4rem;
+`
 
 export const Text = styled.p`
     font-size: 1.5rem;

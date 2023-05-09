@@ -16,8 +16,8 @@ export default function Scene() {
     const pullLightRef = useRef<PointLight>(null)
     const cameraParentRef = useRef<Object3D>(null)
     const curve = useMemo(() => new CatmullRomCurve3([
-        new Vector3(2.5, 2.5, 2.5),        
-        new Vector3(4, 0.5, 4)        
+        new Vector3(0, 2.5, 2.5),        
+        new Vector3(0, 0.5, 4)        
     ]), [])
 
     useFrame((state, delta) => {
@@ -96,7 +96,7 @@ export default function Scene() {
                 shadow-mapSize-height={256}
                 color={theme.colors.active3d}
                 position={[-2, 0.4, 0]} 
-                intensity={1.5} />
+                intensity={2.25} />
 
             <directionalLight 
                 castShadow 
@@ -104,7 +104,7 @@ export default function Scene() {
                 shadow-mapSize-height={256}
                 color={theme.colors.secondary}
                 position={[2, 0.5, 2]} 
-                intensity={0.75} />
+                intensity={1.25} />
 
             <pointLight 
                 position={[0.75, 1, 0.75]} 
@@ -123,7 +123,7 @@ export default function Scene() {
 
             <Physics gravity={[0, -1, 0]}>
                 <Ground ref={groundRef} size={100} />
-                <Blocks ref={blocksRef} count={100} size={0.2} />
+                <Blocks ref={blocksRef} count={144} size={0.2} />
             </Physics>
         </>
     )
