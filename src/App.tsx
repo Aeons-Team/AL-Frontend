@@ -28,7 +28,13 @@ function App() {
     const scroll = new LocomotiveScroll({
       el: document.querySelector('#ui-container'),
       smooth: true,
-      lerp: 0.075
+      lerp: 0.075,
+      mobile: {
+        smooth: true
+      },
+      tablet: {
+        smooth: true
+      }
     })
     
     scroll.on('scroll', ScrollTrigger.update)

@@ -5,7 +5,11 @@ interface ChatMessageParams {
     from?: string
 }
 
-export const ChatInput = styled.input`
+interface WithRef {
+    ref?: any
+}
+
+export const ChatInput = styled.textarea<WithRef>`
     border: none;
     outline: none;
     border-radius: 6px;
@@ -13,6 +17,8 @@ export const ChatInput = styled.input`
     color: ${props => props.theme.colors.secondary};
     padding: 0.5rem 1rem;
     flex-grow: 1;
+    overflow: hidden;
+    resize: none;
 `
 
 export const ChatSend = styled.button`
@@ -112,7 +118,7 @@ export const Close = styled.span`
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
     margin-left: auto;
     position: absolute;
-    right: 1.1rem;
+    right: 0.8rem;
     cursor: pointer;
 `
 

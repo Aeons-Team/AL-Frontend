@@ -1,6 +1,5 @@
 import { useRef } from 'react'
 import { Canvas as R3FCanvas, useFrame } from '@react-three/fiber'
-import { Stats } from '@react-three/drei'
 import { useInView } from 'framer-motion'
 import Scene from '../Scene'
 import * as S from './style'
@@ -15,7 +14,6 @@ export default function Canvas() {
         <S.CanvasParent id='canvas'>
             <R3FCanvas ref={canvasRef} shadows eventSource={document.documentElement} data-scroll data-scroll-speed='1.5'>
                 <Scene />
-                <Stats />
                 { !canvasInView && <DisableRender /> }
             </R3FCanvas>
         </S.CanvasParent>

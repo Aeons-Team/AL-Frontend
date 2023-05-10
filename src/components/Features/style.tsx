@@ -45,6 +45,10 @@ export const Tablet = styled.div`
     justify-content: center;
     margin-top: 1rem;
     width: 85%;
+
+    @media (max-width: 820px) {
+        width: 100%;
+    }
 `
 
 export const FeatureTitle = styled.div`
@@ -72,6 +76,13 @@ export const Feature = styled.div<FeatureProps>`
     ${props => props.right && css`
         align-items: flex-end;
     `}
+
+    @media (max-width: 820px) {
+        padding: 0rem 1rem;
+    }
+    @media (max-width: 550px) {
+        padding: 0rem 0.5rem;
+    }
 `
 
 export const Svg = styled(motion.svg)`
@@ -97,10 +108,4 @@ export const Features = styled.div`
     position: relative;
     pointer-events: auto;
     background-color: ${props => props.theme.colors.background};
-    @media (max-width: 820px) {
-        padding: 5rem 2rem;
-    }
-    @media (max-width: 550px) {
-        padding: 5rem 2rem;
-    }
 `

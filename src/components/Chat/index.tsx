@@ -17,6 +17,7 @@ export default function Chat() {
     }))
 
     const inputRef = useRef<HTMLInputElement>(null)
+    const chatMessagesRef = useRef<HTMLDivElement>(null)
 
     useLayoutEffect(() => {
         if (enabled && !initialized) {
@@ -27,6 +28,14 @@ export default function Chat() {
     useEffect(() => {
         document.documentElement.style.overflowY = enabled ? 'hidden' : 'auto'
     }, [enabled])
+
+    useEffect(() => {
+        const chatMessages = chatMessagesRef.current 
+
+        if (chatMessages) {
+            chatMessages.scrollTop = chatMessages.scrollHeight
+        }
+    }, [currentMessage, messages.length])
 
     const send = () => {
         const input = inputRef.current
@@ -100,7 +109,7 @@ export default function Chat() {
                         </S.Close>
                     </S.Ava>
 
-                    <S.ChatMessages>
+                    <S.ChatMessages ref={chatMessagesRef}>
                         {
                             messages.map((message, i) => (
                                 <S.ChatMessage key={i} from={message.from}>{message.text}</S.ChatMessage>
@@ -113,7 +122,7 @@ export default function Chat() {
                     </S.ChatMessages>
 
                     <S.ChatInputParent>
-                        <S.ChatInput ref={inputRef} disabled={disableInput} onKeyDown={(e) => e.key == 'Enter' && send()} />
+                        <S.ChatInput ref={inputRef} maxLength={500} rows={1} disabled={disableInput} onKeyDown={(e) => e.key == 'Enter' && send()} />
                         <S.ChatSend onClick={send}>
                             <Icon name='send' width='0.9rem' height='0.9rem' />
                         </S.ChatSend>
