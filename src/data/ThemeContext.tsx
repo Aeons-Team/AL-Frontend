@@ -15,7 +15,9 @@ export const theme = {
         object3d: '#0A090E',
         background3d: '#773AE8',
         textDark: '#50445f',
-        background: '#0F0B16'
+        background: '#0F0B16',
+        red: '#fc3d63',
+        green: '#2bed8c'
     },
     
     chatTransition: {

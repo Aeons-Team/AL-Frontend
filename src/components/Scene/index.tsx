@@ -60,8 +60,8 @@ export default function Scene() {
             }
     
             const cameraTo = new Vector3(
-                state.pointer.x * 0.6,
-                Math.max(-1.0, state.pointer.y) * 0.6,
+                state.pointer.x * 0.4,
+                Math.max(-1.0, state.pointer.y) * 0.4,
                 0
             )
     
