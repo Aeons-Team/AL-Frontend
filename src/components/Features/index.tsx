@@ -2,7 +2,10 @@ import { useEffect } from 'react'
 import { motion, useMotionValue } from 'framer-motion'
 import SideText from '../SideText'
 import { useAppStore } from '../../data/AppStore'
-import metamaskVideo from '../../assets/metamask.mp4'
+import metamaskVideo from '../../assets/meta.mp4'
+import fundingVideo from '../../assets/funding.mp4'
+import uploadVideo from '../../assets/upld.mp4'
+import privateVideo from '../../assets/priv.mp4'
 import * as S from './style'
 
 export default function Features() {
@@ -63,7 +66,7 @@ export default function Features() {
                     <S.ButtonTwo />
                     
                     <S.TabletVideo autoPlay muted>
-                        <source src={metamaskVideo} />
+                        <source src={uploadVideo} />
                     </S.TabletVideo>
                 </S.Tablet>
             </S.Feature>
@@ -82,7 +85,7 @@ export default function Features() {
                     <S.ButtonTwo />
                     
                     <S.TabletVideo autoPlay muted>
-                        <source src={metamaskVideo} />
+                        <source src={privateVideo} />
                     </S.TabletVideo>
                 </S.Tablet>
             </S.Feature>
@@ -101,7 +104,7 @@ export default function Features() {
                     <S.ButtonTwo />
                     
                     <S.TabletVideo autoPlay muted>
-                        <source src={metamaskVideo} />
+                        <source src={fundingVideo} />
                     </S.TabletVideo>
                 </S.Tablet>
             </S.Feature>
