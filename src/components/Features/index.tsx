@@ -2,10 +2,10 @@ import { useEffect } from 'react'
 import { motion, useMotionValue } from 'framer-motion'
 import SideText from '../SideText'
 import { useAppStore } from '../../data/AppStore'
-import metamaskVideo from '../../assets/meta.mp4'
+import metamaskVideo from '../../assets/metamask.mp4'
 import fundingVideo from '../../assets/funding.mp4'
-import uploadVideo from '../../assets/upld.mp4'
-import privateVideo from '../../assets/priv.mp4'
+import uploadVideo from '../../assets/upload.mp4'
+import privateVideo from '../../assets/private.mp4'
 import * as S from './style'
 
 export default function Features() {
