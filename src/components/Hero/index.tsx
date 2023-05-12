@@ -20,7 +20,7 @@ export default function Hero() {
                 Seemlessly connect to your <br /> crypto wallet via<S.Span> metamask</S.Span>
             </SideText>
 
-            <SideText top='65vh' right='3rem' rightTablet='1.5rem' data-scroll data-scroll-speed='-3'>
+            <SideText top='65vh' right='3rem' rightTablet='1.5rem' data-scroll data-scroll-speed='-1'>
                 No third parties.<br/>
                 You <S.Span>own</S.Span> and manage <br /> who sees your data.
             </SideText>

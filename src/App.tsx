@@ -33,7 +33,8 @@ function App() {
         smooth: true
       },
       tablet: {
-        smooth: true
+        smooth: true,
+        breakpoint: 0
       }
     })
     
@@ -56,7 +57,9 @@ function App() {
           endTrigger: `#feature-${i}`,
           scroller: '#ui-container',
           start: 'top top+=50px',
-          end: 'bottom bottom+=100px',
+          end: () => {
+            return `+=${(1.5 * window.innerHeight - (9 / 16) * window.innerWidth - 150)}`
+          },
           pin: true
         })
       )
