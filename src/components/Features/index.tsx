@@ -6,10 +6,17 @@ import metamaskVideo from '../../assets/metamask.mp4'
 import fundingVideo from '../../assets/funding.mp4'
 import uploadVideo from '../../assets/upload.mp4'
 import privateVideo from '../../assets/private.mp4'
+import metamaskmobVideo from '../../assets/metamaskmobile.mp4'
+import fundingmobVideo from '../../assets/fundingmobile.mp4'
+import uploadmobVideo from '../../assets/uploadmobile.mp4'
+import privatemobVideo from '../../assets/privatemobile.mp4'
 import * as S from './style'
+import { useMediaQuery } from 'react-responsive'
+
 
 export default function Features() {
     const pathMotion = useMotionValue(0)
+    const isPhone = useMediaQuery({ query: '(max-width: 820px)' })
 
     useEffect(() => {
         useAppStore.subscribe(() => {
@@ -36,14 +43,29 @@ export default function Features() {
                     <S.Span>Aeons</S.Span> lets you create folders, move files between folders, rename files and more!
                 </S.FeatureText>
 
+                {isPhone ? 
+
+                <S.Phone id='phone-1'>
+                <S.ButtonOne />
+                <S.ButtonTwo />
+
+                <S.PhoneVideo autoPlay muted>
+                    <source src={metamaskmobVideo} />
+                </S.PhoneVideo>
+                </S.Phone>
+
+                :
+
                 <S.Tablet id='tablet-1'>
-                    <S.ButtonOne />
-                    <S.ButtonTwo />
-                    
-                    <S.TabletVideo autoPlay muted>
-                        <source src={metamaskVideo} />
-                    </S.TabletVideo>
+                <S.ButtonOne />
+                <S.ButtonTwo />
+
+                <S.TabletVideo autoPlay muted>
+                    <source src={metamaskVideo} />
+                </S.TabletVideo>
                 </S.Tablet>
+                
+                }
 
                 <SideText top='150vh' right='2rem' rightTablet='1.5rem' data-scroll data-scroll-speed='1'>
                     All operations are<br/>
@@ -61,14 +83,30 @@ export default function Features() {
                     <S.Span>Aeons</S.Span> lets you create folders, move files between folders, rename files and more!
                 </S.FeatureText>
 
+                {isPhone ?  
+
+                <S.Phone id='phone-2'>
+                <S.ButtonOne />
+                <S.ButtonTwo />
+
+                <S.PhoneVideo autoPlay muted>
+                    <source src={uploadmobVideo} />
+                </S.PhoneVideo>
+                </S.Phone>
+
+                :
+
                 <S.Tablet id='tablet-2'>
-                    <S.ButtonOne />
-                    <S.ButtonTwo />
-                    
-                    <S.TabletVideo autoPlay muted>
-                        <source src={uploadVideo} />
-                    </S.TabletVideo>
+                <S.ButtonOne />
+                <S.ButtonTwo />
+
+                <S.TabletVideo autoPlay muted>
+                    <source src={uploadVideo} />
+                </S.TabletVideo>
                 </S.Tablet>
+                
+                }
+
             </S.Feature>
 
             <S.Feature id='feature-3'>
@@ -80,14 +118,29 @@ export default function Features() {
                     <S.Span>Aeons</S.Span> lets you create folders, move files between folders, rename files and more!
                 </S.FeatureText>
 
+                {isPhone ? 
+
+                <S.Phone id='phone-3'>
+                <S.ButtonOne />
+                <S.ButtonTwo />
+
+                <S.PhoneVideo autoPlay muted>
+                    <source src={privatemobVideo} />
+                </S.PhoneVideo>
+                </S.Phone>
+
+                :
+
                 <S.Tablet id='tablet-3'>
-                    <S.ButtonOne />
-                    <S.ButtonTwo />
-                    
-                    <S.TabletVideo autoPlay muted>
-                        <source src={privateVideo} />
-                    </S.TabletVideo>
+                <S.ButtonOne />
+                <S.ButtonTwo />
+
+                <S.TabletVideo autoPlay muted>
+                    <source src={privateVideo} />
+                </S.TabletVideo>
                 </S.Tablet>
+
+                }
             </S.Feature>
 
             <S.Feature right id='feature-4'>
@@ -99,14 +152,30 @@ export default function Features() {
                     <S.Span>Aeons</S.Span> lets you create folders, move files between folders, rename files and more!
                 </S.FeatureText>
 
+                {isPhone ?  
+
+
+                <S.Phone id='phone-4'>
+                <S.ButtonOne />
+                <S.ButtonTwo />
+                
+                <S.PhoneVideo autoPlay muted>
+                    <source src={fundingmobVideo} />
+                </S.PhoneVideo>
+                </S.Phone>
+
+                :
+                
                 <S.Tablet id='tablet-4'>
-                    <S.ButtonOne />
-                    <S.ButtonTwo />
-                    
-                    <S.TabletVideo autoPlay muted>
-                        <source src={fundingVideo} />
-                    </S.TabletVideo>
+                <S.ButtonOne />
+                <S.ButtonTwo />
+                
+                <S.TabletVideo autoPlay muted>
+                    <source src={fundingVideo} />
+                </S.TabletVideo>
                 </S.Tablet>
+
+                }
             </S.Feature>
         </S.Features>
     )

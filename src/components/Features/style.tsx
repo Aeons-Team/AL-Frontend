@@ -50,6 +50,24 @@ export const Tablet = styled.div`
         width: 100%;
     }
 `
+export const Phone = styled.div`
+    border-radius: 30px;
+    background-color: ${props => props.theme.colors.primary};   
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    padding: 1.8%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 85%;
+`
+export const PhoneVideo = styled.video<any>`
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+`
 
 export const FeatureTitle = styled.div`
     font-size: 1.85rem;
