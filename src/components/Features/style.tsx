@@ -61,11 +61,15 @@ export const Phone = styled.div`
     justify-content: center;
     margin-top: 1rem;
     width: 85%;
+
+    @media (max-width: 820px) {
+        width: 100%;
+    }
 `
 export const PhoneVideo = styled.video<any>`
     width: 100%;
     height: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 9 / 9;
     border-radius: 12px;
 `
 
