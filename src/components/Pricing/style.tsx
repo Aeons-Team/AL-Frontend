@@ -21,7 +21,7 @@ export const Maintext = styled.div`
     }
 `;
 
-export const BottomText = styled.div`
+export const SideText = styled.div`
     font-size: 1.5rem;
     font-weight: 300;
     @media (max-width: 820px) {
@@ -32,17 +32,14 @@ export const BottomText = styled.div`
     }
 `;
 
-export const SideText = styled.div`
-    position: absolute;
-    padding: 8rem 6rem;
-    left: 4rem;
+export const BottomText = styled.div`
+    font-size: 0.5rem;
+    font-weight: 300;
     @media (max-width: 820px) {
-        padding: 6rem 2rem;
-        left: 2rem;
+        font-size: 0.3rem;
     }
     @media (max-width: 550px) {
-        padding: 8rem 2rem;
-        left: 2rem;
+        font-size: 1rem;
     }
 `;
 
