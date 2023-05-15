@@ -37,6 +37,8 @@ function App() {
         breakpoint: 0
       }
     })
+
+    useAppStore.setState({ scroll })
     
     scroll.on('scroll', ScrollTrigger.update)
 
@@ -56,9 +58,11 @@ function App() {
           trigger: `#tablet-${i}`,
           endTrigger: `#feature-${i}`,
           scroller: '#ui-container',
-          start: 'top top+=50px',
+          start: () => {
+            return `-=${window.innerHeight * 0.5 - (9 / 16) * (window.innerWidth - (window.innerWidth <= 820 ? 0 : 100)) * 0.5 + 25}`
+          },
           end: () => {
-            return `+=${(1.5 * window.innerHeight - (9 / 16) * window.innerWidth - 150)}`
+            return `+=${(2 * window.innerHeight - (9 / 16) * (window.innerWidth - (window.innerWidth <= 820 ? 0 : 100)) - 200)}`
           },
           pin: true
         })
@@ -79,12 +83,45 @@ function App() {
 
     triggers.push(
       ScrollTrigger.create({
+        trigger: '#hero',
+        scroller: '#ui-container',
+        start: 'top top',
+        end: '+=100%',
+        onToggle: (self) => {
+          if (self.isActive) {
+            useAppStore.setState({ navState: 0 })
+          }
+        }
+      })
+    )
+
+    triggers.push(
+      ScrollTrigger.create({
         trigger: '#features',
         scroller: '#ui-container',
         start: 'top top+=100px',
         end: 'bottom bottom',
+        onToggle: (self) => {
+          if (self.isActive) {
+            useAppStore.setState({ navState: 1 })
+          }
+        },
         onUpdate: (self) => {
           useAppStore.setState({ scrollFeatures: self.progress })
+        }
+      })
+    )
+
+    triggers.push(
+      ScrollTrigger.create({
+        trigger: '#pricing',
+        scroller: '#ui-container',
+        start: 'top bottom',
+        end: 'bottom bottom',
+        onToggle: (self) => {
+          if (self.isActive) {
+            useAppStore.setState({ navState: 2 })
+          }
         }
       })
     )

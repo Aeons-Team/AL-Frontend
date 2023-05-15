@@ -45,7 +45,7 @@ export default function Features() {
                     </S.TabletVideo>
                 </S.Tablet>
 
-                <SideText top='150vh' left='2rem' leftTablet='1.5rem' data-scroll data-scroll-speed='1'>
+                <SideText top='150vh' right='2rem' rightTablet='1.5rem' rightMobile='1rem' data-scroll data-scroll-speed='1'>
                     All operations are<br/>
                     recorded into the <S.Span>blockweave</S.Span><br />
                     with <S.Span>0 Transaction fee</S.Span>
