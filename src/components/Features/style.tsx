@@ -48,11 +48,11 @@ export const Tablet = styled.div`
 `
 
 export const FeatureTitle = styled.div`
-    font-size: 1.85rem;
+    font-size: 1.5rem;
 `
 
 export const FeatureText = styled.div`
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 300;
 `
 
@@ -105,3 +105,4 @@ export const Features = styled.div`
     pointer-events: auto;
     background-color: ${props => props.theme.colors.background};
 `
+

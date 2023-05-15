@@ -27,7 +27,7 @@ export const Navbar = styled.div`
 
 export const NavItem = styled.div`
     background: ${props => props.theme.colors.primary2};
-	font-size: 0.7rem;
+	font-size: 1rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;

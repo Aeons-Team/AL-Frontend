@@ -23,7 +23,7 @@ export const Topbar = styled.div`
 `
 export const Text = styled.div`
     font-weight: 200;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 `;
 
 export const Span = styled.span`

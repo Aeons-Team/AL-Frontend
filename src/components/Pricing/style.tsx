@@ -12,7 +12,7 @@ export const Pricing = styled.div`
 
 export const Maintext = styled.div`
     font-weight: 200;
-    font-size: 4.5rem;
+    font-size: 5rem;
     @media (max-width: 820px) {
         font-size: 5rem;
     }
@@ -25,7 +25,7 @@ export const BottomText = styled.div`
     font-size: 1.5rem;
     font-weight: 300;
     @media (max-width: 820px) {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     @media (max-width: 550px) {
         font-size: 1rem;

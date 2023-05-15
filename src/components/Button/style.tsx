@@ -12,6 +12,7 @@ export const Button = styled.button<ButtonProps>`
     padding: 0.85rem 1.9rem;
     pointer-events: auto;
     cursor: pointer;
+    font-size: 1rem;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
 
     ${props => props.primary && css`

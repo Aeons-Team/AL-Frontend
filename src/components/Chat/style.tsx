@@ -128,7 +128,7 @@ export const Ava = styled.div`
     align-items: center;
     padding: 1.85rem 1.25rem;
     padding-bottom: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 `
 
 export const ChatInner = styled(motion.div)`
