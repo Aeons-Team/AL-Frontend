@@ -13,7 +13,8 @@ export const Hero = styled.div`
     
 export const Title = styled.div`
     font-weight: 100;
-    font-size: 5.5rem;
+    font-size: 6rem;
+    color: white;
     margin-top: 15vh;
     @media (max-width: 820px) {
         font-size: 4.5rem;
@@ -27,7 +28,7 @@ export const Title = styled.div`
 
 export const Text = styled.p`
     font-size: 1.25rem;
-    font-weight: 200;
+    font-weight: 300;
     @media (max-width: 820px) {
         font-size: 1.1rem;
     }
