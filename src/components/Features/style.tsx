@@ -29,7 +29,6 @@ export const ButtonTwo = styled.div`
 
 export const TabletVideo = styled.video<any>`
     width: 100%;
-    height: 100%;
     aspect-ratio: 16 / 9;
     border-radius: 12px;
 `
@@ -44,16 +43,40 @@ export const Tablet = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 1rem;
-    width: 100%;
+    width: calc(100% - 100px);
+
+    @media (max-width: 820px) {
+        width: 100%;
+    }
 `
 
 export const FeatureTitle = styled.div`
     font-size: 1.5rem;
+    opacity: 0.9;
+
+    @media (max-width: 820px) {
+        padding: 0 0.5rem;
+        font-size: 1.25rem;
+    }
+    
+    @media (max-width: 550px) {
+        font-size: 0.9rem;
+    }
 `
 
 export const FeatureText = styled.div`
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    opacity: 0.9;
     font-weight: 300;
+
+    @media (max-width: 820px) {
+        padding: 0 0.5rem;
+        font-size: 1rem;
+    }
+    
+    @media (max-width: 550px) {
+        font-size: 0.8rem;
+    }
 `
 
 interface FeatureProps {
@@ -61,7 +84,7 @@ interface FeatureProps {
 }
 
 export const Feature = styled.div<FeatureProps>`
-    height: 150vh;
+    height: 200vh;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -71,6 +94,7 @@ export const Feature = styled.div<FeatureProps>`
 
     ${props => props.right && css`
         align-items: flex-end;
+        text-align: right;
     `}
 
     @media (max-width: 820px) {

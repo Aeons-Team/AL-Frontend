@@ -17,6 +17,7 @@ export interface SideTextProps {
 
 export const SideText = styled.span<SideTextProps>`
     position: absolute;
+    font-weight: 300;
     z-index: 5;
     
     ${props => props.top && css<SideTextProps>`
@@ -48,6 +49,8 @@ export const SideText = styled.span<SideTextProps>`
     }
 
     @media (max-width: 550px) {
+        font-size: 0.85rem;
+
         ${props => props.topMobile && css<SideTextProps>`
             top: ${props => props.topMobile};
         `}

@@ -20,10 +20,14 @@ export const Topbar = styled.div`
     padding: 1.75rem;
     pointer-events: none;
     z-index: 5;
+    
+    @media (max-width: 550px) {
+        padding: 1.75rem 1.1rem;
+    }
 `
 export const Text = styled.div`
     font-weight: 200;
-    font-size: 1.5rem;
+    font-size: 1rem;
 `;
 
 export const Span = styled.span`

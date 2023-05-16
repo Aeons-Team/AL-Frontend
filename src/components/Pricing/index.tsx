@@ -3,7 +3,7 @@ import Icon from '../Icon'
 
 export default function Pricing() {
     return (
-        <S.Pricing>
+        <S.Pricing id='pricing'>
             <S.Maintext>
             <S.Span>No</S.Span> pricing plans.
             </S.Maintext>
