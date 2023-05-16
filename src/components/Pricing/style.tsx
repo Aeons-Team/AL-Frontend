@@ -65,7 +65,7 @@ export const ethereum = styled.div`
     transform: translate(-50%, -50%);
 
     @media (max-width: 820px) {
-        top: 70%;
+        top: 65%;
         right: 45%;
         transform: translate(-50%, -50%);
     }
@@ -85,13 +85,13 @@ export const arbitrum = styled.div`
 
     @media (max-width: 820px) {
         top: 75%;
-        left: 35%;
+        left: 30%;
         transform: translate(-50%, -50%);
     }
 
     @media (max-width: 550px) {
         top: 65%;
-        right: 25%;
+        right: 45%;
         transform: translate(-50%, -50%);
     }
 `;
@@ -104,7 +104,7 @@ export const avalanche = styled.div`
 
     @media (max-width: 820px) {
         top: 78%;
-        right: 25%;
+        right: 45%;
         transform: translate(-50%, -50%);
     }
 
@@ -124,7 +124,7 @@ export const polygon = styled.div`
 
     @media (max-width: 820px) {
         top: 65%;
-        right: 35%;
+        right: 40%;
         transform: translate(-50%, -50%);
     }
 
