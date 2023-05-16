@@ -30,9 +30,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
     enabled: false,
     socket: null,
     initialize: () => {
-        const socket = io(import.meta.env.VITE_PUBLIC_API_URL, {
-            transports: ['websocket']
-        })
+        const socket = io(import.meta.env.VITE_PUBLIC_API_URL)
 
         const onResponseStart = () => {
             set({ currentMessage: '' })
