@@ -108,7 +108,7 @@ export default function Chat() {
         }
     }
 
-    const messagesWithCurrent: any = [...messages]
+    const messagesWithCurrent: any[] = [...messages]
 
     if (currentMessage) messagesWithCurrent.push({ from: 'ai', text: currentMessage, streaming: true })
 
