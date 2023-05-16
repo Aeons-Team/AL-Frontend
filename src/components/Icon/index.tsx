@@ -67,7 +67,7 @@ export default function Icon({ name, height, width, fill = 'white', ...remaining
 
     if (name == 'ethereum') {
         return (
-            <svg width="100" height="150" viewBox="0 0 33 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="600" height="300" viewBox="0 0 33 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16.4951 0L16.1346 1.27266V38.199L16.4951 38.5728L32.9899 28.4409L16.4951 0Z" fill="#343434"/>
                 <path d="M16.4952 0L0 28.4409L16.4952 38.5728V20.6498V0Z" fill="#8C8C8C"/>
                 <path d="M16.4951 41.818L16.2919 42.0755V55.2293L16.4951 55.8457L33 31.6914L16.4951 41.818Z" fill="#3C3C3B"/>
@@ -88,7 +88,7 @@ export default function Icon({ name, height, width, fill = 'white', ...remaining
 
     if (name == 'arbitrum') {
         return (
-            <svg width="30" height="30" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="40" height="40" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_73_223)">
             <path d="M1.08479 3.64797V8.35197C1.08479 8.65437 1.24319 8.92797 1.50719 9.08157L5.58239 11.4336C5.84159 11.5824 6.16319 11.5824 6.42239 11.4336L10.4976 9.08157C10.7568 8.93277 10.92 8.65437 10.92 8.35197V3.64797C10.92 3.34557 10.7616 3.07197 10.4976 2.91837L6.42239 0.566373C6.16319 0.417573 5.84159 0.417573 5.58239 0.566373L1.50719 2.91837C1.24799 3.06717 1.08959 3.34557 1.08959 3.64797H1.08479Z" fill="#213147"/>
             <path d="M6.888 6.91203L6.3072 8.50563C6.2928 8.54883 6.2928 8.59683 6.3072 8.64483L7.3056 11.3856L8.4624 10.7184L7.0752 6.91203C7.0416 6.82563 6.9216 6.82563 6.888 6.91203Z" fill="#12AAFF"/>

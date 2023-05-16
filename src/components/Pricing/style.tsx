@@ -47,77 +47,47 @@ export const Span = styled.span`
 
 export const ethereum = styled.div`
     position: absolute;
-    top: 38%;
-    right: 18%;
+    top: 50%;
+    left: 75%;
     transform: translate(-50%, -50%);
 
-    @media (max-width: 1000px) {
-        top: 65%;
-        right: 45%;
-        transform: translate(-50%, -50%);
-    }
-
-    @media (max-width: 550px) {
-        top: 58%;
-        right: 35%;
-        transform: translate(-50%, -50%);
+    @media (max-width: 1300px) {
+        visibility: hidden;
     }
 `;
 
 export const arbitrum = styled.div`
     position: absolute;
-    top: 45%;
-    left: 73%;
+    top: 70%;
+    left: 65%;
     transform: translate(-50%, -50%);
 
-    @media (max-width: 1000px) {
-        top: 75%;
-        left: 30%;
-        transform: translate(-50%, -50%);
+    @media (max-width: 1300px) {
+        visibility: hidden;
     }
 
-    @media (max-width: 550px) {
-        top: 65%;
-        right: 45%;
-        transform: translate(-50%, -50%);
-    }
 `;
 
 export const avalanche = styled.div`
     position: absolute;
-    top: 48%;
-    right: 18%;
+    top: 80%;
+    left: 85%;
     transform: translate(-50%, -50%);
 
-    @media (max-width: 1000px) {
-        top: 78%;
-        right: 45%;
-        transform: translate(-50%, -50%);
+    @media (max-width: 1300px) {
+        visibility: hidden;
     }
 
-    @media (max-width: 550px) {
-        top: 68%;
-        right: 20%;
-        transform: translate(-50%, -50%);
-    }
 `;
 
 export const polygon = styled.div`
 
     position: absolute;
     top: 30%;   
-    right: 18%;
+    left: 85%;
     transform: translate(-50%, -50%);
 
-    @media (max-width: 1000px) {
-        top: 65%;
-        right: 40%;
-        transform: translate(-50%, -50%);
-    }
-
-    @media (max-width: 550px) {
-        top: 50%;
-        right: 25%;
-        transform: translate(-50%, -50%);
+    @media (max-width: 1300px) {
+        visibility: hidden;
     }
 `;
