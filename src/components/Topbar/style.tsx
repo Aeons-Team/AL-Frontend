@@ -33,4 +33,4 @@ export const Text = styled.div`
 export const Span = styled.span`
     color: ${props => props.theme.colors.active};
 `; 
-  
+

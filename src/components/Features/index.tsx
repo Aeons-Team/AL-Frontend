@@ -29,11 +29,11 @@ export default function Features() {
 
             <S.Feature id='feature-1'>
                 <S.FeatureTitle>
-                    <S.Span>Organize and manage</S.Span> your files efficiently
+                    Connect via <S.Span>Metamask</S.Span>
                 </S.FeatureTitle>
                 
                 <S.FeatureText>
-                    <S.Span>Aeons</S.Span> lets you create folders, move files between folders, rename files and more!
+                    Aeons uses <S.Span>Metamask</S.Span> to connect to the <S.Span>blockchain</S.Span> and <S.Span>sign</S.Span> transactions.
                 </S.FeatureText>
 
                 <S.Tablet id='tablet-1'>
@@ -74,11 +74,11 @@ export default function Features() {
 
             <S.Feature id='feature-3'>
                 <S.FeatureTitle>
-                    <S.Span>Organize and manage</S.Span> your files efficiently
+                    Store your files <S.Span>securely</S.Span>
                 </S.FeatureTitle>
                 
                 <S.FeatureText>
-                    <S.Span>Aeons</S.Span> lets you create folders, move files between folders, rename files and more!
+                    <S.Span>Aeons</S.Span> lets you create private files that can only be accessed by you.
                 </S.FeatureText>
 
                 <S.Tablet id='tablet-3'>
@@ -93,11 +93,11 @@ export default function Features() {
 
             <S.Feature right id='feature-4'>
                 <S.FeatureTitle>
-                    <S.Span>Organize and manage</S.Span> your files efficiently
+                    <S.Span>Fund</S.Span> your account internally
                 </S.FeatureTitle>
                 
                 <S.FeatureText>
-                    <S.Span>Aeons</S.Span> lets you create folders, move files between folders, rename files and more!
+                    <S.Span>Aeons</S.Span> lets you fund your account internally with <S.Span>0 transaction fee</S.Span>.
                 </S.FeatureText>
 
                 <S.Tablet id='tablet-4'>

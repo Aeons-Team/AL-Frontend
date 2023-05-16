@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 export interface ButtonProps {
     primary?: boolean
+    onClick?: any
 }
 
 export const Button = styled.button<ButtonProps>`

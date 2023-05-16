@@ -1,7 +1,12 @@
 import styled from 'styled-components'
 
 export const Pricing = styled.div`
-    padding: 5rem 6rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+    position: relative;
     @media (max-width: 820px) {
         padding: 5rem 2rem;
     }
@@ -50,4 +55,33 @@ export const BottomText = styled.div`
 export const Span = styled.span`
     color: ${props => props.theme.colors.active};
     }
+`;
+
+export const ethereum = styled.div`
+    position: absolute;
+    top: 38%;
+    right: 18%;
+    transform: translate(-50%, -50%);
+`;
+
+export const arbitrum = styled.div`
+    position: absolute;
+    top: 45%;
+    right: 25%;
+    transform: translate(-50%, -50%);
+`;
+
+export const avalanche = styled.div`
+    position: absolute;
+    top: 48%;
+    right: 18%;
+    transform: translate(-50%, -50%);
+`;
+
+export const polygon = styled.div`
+
+    position: absolute;
+    top: 30%;   
+    right: 18%;
+    transform: translate(-50%, -50%);
 `;

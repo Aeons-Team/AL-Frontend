@@ -6,7 +6,7 @@ export default function Topbar() {
         <S.Topbar>
             <S.Text>aeons</S.Text>
 
-            <Button primary>
+            <Button primary onClick={() => window.open("https://aeons.vercel.app")}>
                 Open <S.Span>drive</S.Span>
             </Button>
             
