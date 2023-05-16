@@ -62,6 +62,12 @@ export const ethereum = styled.div`
     top: 38%;
     right: 18%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 820px) {
+        top: 73%;
+        right: 25%;
+        transform: translate(-50%, -50%);
+    }
 `;
 
 export const arbitrum = styled.div`
@@ -69,6 +75,12 @@ export const arbitrum = styled.div`
     top: 45%;
     right: 25%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 820px) {
+        top: 78%;
+        right: 65%;
+        transform: translate(-50%, -50%);
+    }
 `;
 
 export const avalanche = styled.div`
@@ -76,6 +88,12 @@ export const avalanche = styled.div`
     top: 48%;
     right: 18%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 820px) {
+        top: 84%;
+        right: 20%;
+        transform: translate(-50%, -50%);
+    }
 `;
 
 export const polygon = styled.div`
@@ -84,4 +102,10 @@ export const polygon = styled.div`
     top: 30%;   
     right: 18%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 820px) {
+        top: 65%;
+        right: 25%;
+        transform: translate(-50%, -50%);
+    }
 `;
