@@ -7,6 +7,7 @@ export const Pricing = styled.div`
     gap: 0.75rem;
     align-items: flex-start;
     position: relative;
+    padding: 3rem 4rem;
     @media (max-width: 820px) {
         padding: 5rem 2rem;
     }
@@ -18,7 +19,7 @@ export const Pricing = styled.div`
 export const Maintext = styled.div`
     font-weight: 200;
     font-size: 5rem;
-    padding: 5rem 4rem;
+    padding: 3rem 4rem;
     @media (max-width: 820px) {
         font-size: 5rem;
     }
@@ -45,7 +46,7 @@ export const BottomText = styled.div`
     padding: 15rem 4rem;
 
     @media (max-width: 820px) {
-        font-size: 0.3rem;
+        font-size: 1rem;
     }
     @media (max-width: 550px) {
         font-size: 1rem;
@@ -64,8 +65,14 @@ export const ethereum = styled.div`
     transform: translate(-50%, -50%);
 
     @media (max-width: 820px) {
-        top: 73%;
-        right: 25%;
+        top: 70%;
+        right: 45%;
+        transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 550px) {
+        top: 58%;
+        right: 35%;
         transform: translate(-50%, -50%);
     }
 `;
@@ -73,12 +80,18 @@ export const ethereum = styled.div`
 export const arbitrum = styled.div`
     position: absolute;
     top: 45%;
-    right: 25%;
+    left: 73%;
     transform: translate(-50%, -50%);
 
     @media (max-width: 820px) {
-        top: 78%;
-        right: 65%;
+        top: 75%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 550px) {
+        top: 65%;
+        right: 25%;
         transform: translate(-50%, -50%);
     }
 `;
@@ -90,7 +103,13 @@ export const avalanche = styled.div`
     transform: translate(-50%, -50%);
 
     @media (max-width: 820px) {
-        top: 84%;
+        top: 78%;
+        right: 25%;
+        transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 550px) {
+        top: 68%;
         right: 20%;
         transform: translate(-50%, -50%);
     }
@@ -105,6 +124,12 @@ export const polygon = styled.div`
 
     @media (max-width: 820px) {
         top: 65%;
+        right: 35%;
+        transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 550px) {
+        top: 50%;
         right: 25%;
         transform: translate(-50%, -50%);
     }
