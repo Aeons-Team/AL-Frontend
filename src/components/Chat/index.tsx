@@ -1,6 +1,7 @@
 import { useRef, useLayoutEffect, useEffect } from 'react'
 import { useChatStore, useChatStoreShallow } from '../../data/ChatStore'
 import { theme } from '../../data/ThemeContext'
+import Spinner from 'react-spinner-material'
 import Icon from '../Icon'
 import * as S from './style'
 
@@ -79,6 +80,22 @@ export default function Chat() {
         }
     }
 
+    const chatMessageVariants = (streaming: boolean) => ({
+        disabled: {
+            y: -10,
+            opacity: 0
+        },
+
+        enabled: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                delay: streaming ? 0 : 0.2,
+                ...theme.chatTransition
+            }
+        }
+    })
+
     const avaStatusTransition = {
         online: {
             backgroundColor: theme.colors.green,
@@ -90,6 +107,15 @@ export default function Chat() {
             transition: theme.chatTransition
         }
     }
+
+    const messagesWithCurrent: any = [...messages]
+
+    if (currentMessage) messagesWithCurrent.push({ from: 'ai', text: currentMessage, streaming: true })
+
+    if (connected && disableInput && (currentMessage == null || currentMessage == '')) messagesWithCurrent.push({
+        from: 'ai',
+        text: <Spinner color='var(--color-secondary)' stroke={2} radius={14} style={{ margin: '2px' }} />  
+    })
 
     return (
         <S.Chat onClick={onChatBgClick} initial={'disabled'} animate={enabled ? 'enabled' : 'disabled'}>
@@ -111,13 +137,9 @@ export default function Chat() {
 
                     <S.ChatMessages ref={chatMessagesRef}>
                         {
-                            messages.map((message, i) => (
-                                <S.ChatMessage key={i} from={message.from}>{message.text}</S.ChatMessage>
+                            messagesWithCurrent.map((message, i) => (
+                                <S.ChatMessage variants={chatMessageVariants(message.streaming)} key={i} from={message.from}>{message.text}</S.ChatMessage>
                             ))
-                        }
-
-                        {
-                            currentMessage && <S.ChatMessage from='ai'>{currentMessage}</S.ChatMessage>
                         }
                     </S.ChatMessages>
 

@@ -4,7 +4,8 @@ import io, { Socket } from 'socket.io-client'
 
 interface Message {
     from?: 'me' | 'ai'
-    text: string
+    text: string,
+    streaming?: boolean
 }
 
 interface ChatState {

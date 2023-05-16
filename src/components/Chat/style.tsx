@@ -43,7 +43,7 @@ export const ChatInputParent = styled.div`
     padding: 0.5rem 0.75rem;
 `
 
-export const ChatMessage = styled.div<ChatMessageParams>`
+export const ChatMessage = styled(motion.div)<ChatMessageParams>`
     display: flex;
     align-self: ${props => props.from == 'me' ? 'flex-end' : 'flex-start'};
     justify-content: ${props => props.from == 'me' ? 'flex-end' : 'flex-start'};
