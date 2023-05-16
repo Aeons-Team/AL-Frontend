@@ -30,20 +30,20 @@ function App() {
       smooth: true,
       lerp: 0.075,
       mobile: {
-        smooth: true
+        smooth: true,
       },
       tablet: {
         smooth: true,
         breakpoint: 0
       }
-    })
+    } as any)
 
     useAppStore.setState({ scroll })
     
     scroll.on('scroll', ScrollTrigger.update)
 
     ScrollTrigger.scrollerProxy('#ui-container', {
-      scrollTop: () => scroll.scroll.instance.scroll.y,
+      scrollTop: () => (scroll as any).scroll.instance.scroll.y,
       pinType: 'transform',
       getBoundingClientRect() {
         return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight }
@@ -59,10 +59,10 @@ function App() {
           endTrigger: `#feature-${i}`,
           scroller: '#ui-container',
           start: () => {
-            return `-=${window.innerHeight * 0.5 - (9 / 16) * (window.innerWidth - (window.innerWidth <= 1000 ? 0 : 100)) * 0.5 + 25}`
+            return `-=${window.innerHeight * 0.5 - (9 / 16) * (window.innerWidth - (window.innerWidth <= 820 ? 0 : 100)) * 0.5 + 25}`
           },
           end: () => {
-            return `+=${(2 * window.innerHeight - (9 / 16) * (window.innerWidth - (window.innerWidth <= 1000 ? 0 : 100)) - 200)}`
+            return `+=${(2 * window.innerHeight - (9 / 16) * (window.innerWidth - (window.innerWidth <= 820 ? 0 : 100)) - 200)}`
           },
           pin: true
         })
@@ -126,7 +126,10 @@ function App() {
       })
     )
 
-    ScrollTrigger.addEventListener('refresh', () => scroll.update())
+    ScrollTrigger.addEventListener('refresh', () => {
+      scroll.update()
+    })
+    
     ScrollTrigger.refresh()
 
     return () => {

@@ -84,7 +84,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
 
         socket.on('response-text', onResponseText)
 
-        socket.on('response-error', (error: any) => { })
+        socket.on('response-error', (_) => { })
 
         socket.connect()
 

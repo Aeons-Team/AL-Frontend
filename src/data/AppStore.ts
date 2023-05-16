@@ -13,7 +13,7 @@ interface AppStoreState {
     navState: number
 }
 
-export const useAppStore = create<AppStoreState>((set) => ({
+export const useAppStore = create<AppStoreState>(() => ({
     cursor: new Vector2(0, 0),
     scroll: null,
     scrollCanvas: 0,

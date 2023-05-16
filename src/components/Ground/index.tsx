@@ -2,24 +2,23 @@ import { forwardRef } from 'react'
 import { useBox } from '@react-three/cannon'
 import { Mesh } from 'three'
 import { mergeRefs } from 'react-merge-refs'
-import { ThreeEvent } from '@react-three/fiber'
 import { useAppStore } from '../../data/AppStore'
 import { useChatStore } from '../../data/ChatStore'
 import { theme } from '../../data/ThemeContext'
 
 const Ground = forwardRef(({ size }: { size: number }, ref) => {
-    const [ref2, api] = useBox<Mesh>(() => ({ 
+    const [ref2, _] = useBox<Mesh>(() => ({ 
         position: [0, -size * 0.5, 0], 
         args: [size, size, size]
     }))
 
-    const onPointerDown = (e: ThreeEvent<MouseEvent>) => {
+    const onPointerDown = () => {
         if (useChatStore.getState().enabled) return
 
         useAppStore.setState({ pull: true })
     }
   
-    const onPointerUp = (e: ThreeEvent<MouseEvent>) => {
+    const onPointerUp = () => {
         useAppStore.setState({ pull: false })
     }
 

@@ -21,8 +21,8 @@ export default function Scene() {
     ]), [])
 
     useFrame((state, delta) => {
-        const camera = state.camera
-        state.events.update()
+        const camera = state.camera;
+        (state as any).events.update()
 
         const ground = groundRef.current 
         const pullLight = pullLightRef.current 

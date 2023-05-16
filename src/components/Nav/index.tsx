@@ -3,7 +3,7 @@ import Icon from '../Icon'
 import * as S from './style'
 
 export default function Navbar() {
-    const scrollTo = (id: string) => useAppStore.getState().scroll?.scrollTo(document.querySelector(id))
+    const scrollTo = (id: string) => useAppStore.getState().scroll?.scrollTo(document.querySelector(id) as any)
 
     const navState = useAppStore(state => state.navState)
 
