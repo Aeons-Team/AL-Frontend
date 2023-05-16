@@ -59,10 +59,10 @@ function App() {
           endTrigger: `#feature-${i}`,
           scroller: '#ui-container',
           start: () => {
-            return `-=${window.innerHeight * 0.5 - (9 / 16) * (window.innerWidth - (window.innerWidth <= 820 ? 0 : 100)) * 0.5 + 25}`
+            return `-=${window.innerHeight * 0.5 - (9 / 16) * (window.innerWidth - (window.innerWidth <= 1000 ? 0 : 100)) * 0.5 + 25}`
           },
           end: () => {
-            return `+=${(2 * window.innerHeight - (9 / 16) * (window.innerWidth - (window.innerWidth <= 820 ? 0 : 100)) - 200)}`
+            return `+=${(2 * window.innerHeight - (9 / 16) * (window.innerWidth - (window.innerWidth <= 1000 ? 0 : 100)) - 200)}`
           },
           pin: true
         })

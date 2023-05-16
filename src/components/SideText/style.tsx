@@ -33,7 +33,7 @@ export const SideText = styled.span<SideTextProps>`
         bottom: ${props => props.bottom};
     `}
     
-    @media (max-width: 820px) {
+    @media (max-width: 1000px) {
         ${props => props.topTablet && css<SideTextProps>`
             top: ${props => props.topTablet};
         `}

@@ -45,7 +45,7 @@ export const Tablet = styled.div`
     margin-top: 1rem;
     width: calc(100% - 100px);
 
-    @media (max-width: 820px) {
+    @media (max-width: 1000px) {
         width: 100%;
     }
 `
@@ -54,7 +54,7 @@ export const FeatureTitle = styled.div`
     font-size: 1.5rem;
     opacity: 0.9;
 
-    @media (max-width: 820px) {
+    @media (max-width: 1000px) {
         padding: 0 0.5rem;
         font-size: 1.25rem;
     }
@@ -69,7 +69,7 @@ export const FeatureText = styled.div`
     opacity: 0.9;
     font-weight: 300;
 
-    @media (max-width: 820px) {
+    @media (max-width: 1000px) {
         padding: 0 0.5rem;
         font-size: 1rem;
     }
@@ -97,7 +97,7 @@ export const Feature = styled.div<FeatureProps>`
         text-align: right;
     `}
 
-    @media (max-width: 820px) {
+    @media (max-width: 1000px) {
         padding: 0rem 1rem;
     }
     @media (max-width: 550px) {

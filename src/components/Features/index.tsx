@@ -33,14 +33,14 @@ export default function Features() {
                 </S.FeatureTitle>
                 
                 <S.FeatureText>
-                    Aeons uses <S.Span>Metamask</S.Span> to connect to the <S.Span>blockchain</S.Span> and <S.Span>sign</S.Span> transactions.
+                    Aeons uses <S.Span>Metamask</S.Span> to connect to the <S.Span>Bundlr network</S.Span> and pay for storage.
                 </S.FeatureText>
 
                 <S.Tablet id='tablet-1'>
                     <S.ButtonOne />
                     <S.ButtonTwo />
 
-                    <S.TabletVideo autoPlay muted>
+                    <S.TabletVideo autoPlay loop muted>
                         <source src={metamaskVideo} />
                     </S.TabletVideo>
                 </S.Tablet>
@@ -65,7 +65,7 @@ export default function Features() {
                     <S.ButtonOne />
                     <S.ButtonTwo />
 
-                    <S.TabletVideo autoPlay muted>
+                    <S.TabletVideo autoPlay loop muted>
                         <source src={uploadVideo} />
                     </S.TabletVideo>
                 </S.Tablet>
@@ -78,14 +78,14 @@ export default function Features() {
                 </S.FeatureTitle>
                 
                 <S.FeatureText>
-                    <S.Span>Aeons</S.Span> lets you create private files that can only be accessed by you.
+                    <S.Span>Aeons</S.Span> lets you create private files that can only be accessed and shared by you.
                 </S.FeatureText>
 
                 <S.Tablet id='tablet-3'>
                     <S.ButtonOne />
                     <S.ButtonTwo />
 
-                    <S.TabletVideo autoPlay muted>
+                    <S.TabletVideo autoPlay loop muted>
                         <source src={privateVideo} />
                     </S.TabletVideo>
                 </S.Tablet>
@@ -93,18 +93,18 @@ export default function Features() {
 
             <S.Feature right id='feature-4'>
                 <S.FeatureTitle>
-                    <S.Span>Fund</S.Span> your account internally
+                    Pay using <S.Span>ERC20</S.Span> tokens
                 </S.FeatureTitle>
                 
                 <S.FeatureText>
-                    <S.Span>Aeons</S.Span> lets you fund your account internally with <S.Span>0 transaction fee</S.Span>.
+                    Aeons lets you pay for storage with ethereum and other <S.Span>ERC20</S.Span> tokens like matic.
                 </S.FeatureText>
 
                 <S.Tablet id='tablet-4'>
                     <S.ButtonOne />
                     <S.ButtonTwo />
                     
-                    <S.TabletVideo autoPlay muted>
+                    <S.TabletVideo autoPlay loop muted>
                         <source src={fundingVideo} />
                     </S.TabletVideo>
                 </S.Tablet>
