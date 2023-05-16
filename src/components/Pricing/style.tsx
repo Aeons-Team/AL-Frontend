@@ -13,6 +13,7 @@ export const Pricing = styled.div`
 export const Maintext = styled.div`
     font-weight: 200;
     font-size: 5rem;
+    padding: 5rem 4rem;
     @media (max-width: 820px) {
         font-size: 5rem;
     }
@@ -24,6 +25,7 @@ export const Maintext = styled.div`
 export const SideText = styled.div`
     font-size: 1.5rem;
     font-weight: 300;
+    padding: 0 4rem;
     @media (max-width: 820px) {
         font-size: 1.3rem;
     }
@@ -33,8 +35,10 @@ export const SideText = styled.div`
 `;
 
 export const BottomText = styled.div`
-    font-size: 0.5rem;
+    font-size: 1rem;
     font-weight: 300;
+    padding: 15rem 4rem;
+
     @media (max-width: 820px) {
         font-size: 0.3rem;
     }
