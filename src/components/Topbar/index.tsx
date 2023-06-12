@@ -1,16 +1,19 @@
 import Button from '../Button'
 import * as S from './style'
+import logoAvabi from '../../assets/logo (2).png'
 
 export default function Topbar() {
     return (
         <S.Topbar>
-            <S.Text>aeons</S.Text>
-
-            <Button primary onClick={() => window.open("https://aeons.vercel.app")}>
-                Open <S.Span>drive</S.Span>
+            <S.Text><S.Span></S.Span></S.Text>
+            <S.logo >               
+                    <img src={logoAvabi} />
+                    </S.logo>
+            <Button primary onClick={() => window.open("#contact")}>
+                Send <S.Span>message</S.Span>
             </Button>
             
             <S.Fade />
         </S.Topbar>
     )
-}
+};

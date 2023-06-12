@@ -10,10 +10,34 @@ export const Fade = styled.div`
     pointer-events: none;
     z-index: -1;
 `
+export const tImage = styled.div`
+width: 2rem;
+border-radius: 1rem;
+ 
 
+  img {
+    width: 100%;
+    size: cover;
+    aspect-ratio: 16 / 9;
+    border-radius: 1rem;
+  }
+
+`
+export const logo = styled.div`
+    display: fixed;
+    position: relative;
+    width: 8rem;
+    
+  img {
+    width: 100%;
+    size: cover;
+
+  }
+
+`
 export const Topbar = styled.div`
     display: flex;
-    position: fixed;
+    position: absolute;
     width: 100%;
     left: 0;
     top: 0;

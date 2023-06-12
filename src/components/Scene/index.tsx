@@ -122,8 +122,8 @@ export default function Scene() {
             <SoftShadows size={5} focus={0.25} samples={10} />
 
             <Physics gravity={[0, -1, 0]}>
-                <Ground ref={groundRef} size={100} />
-                <Blocks ref={blocksRef} count={144} size={0.2} />
+                <Ground ref={groundRef} size={188} />
+                <Blocks ref={blocksRef} count={250} size={0.2} />
             </Physics>
         </>
     )

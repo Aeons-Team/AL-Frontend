@@ -6,7 +6,7 @@ export interface ButtonProps {
 }
 
 export const Button = styled.button<ButtonProps>`
-    border-radius: 6px;
+    border-radius: 2rem;
     border: 1px solid ${props => props.theme.colors.primary2};
     color: ${props => props.theme.colors.secondary};
     margin-left: auto;
@@ -22,6 +22,6 @@ export const Button = styled.button<ButtonProps>`
     `}
 
     &:hover {
-        background-color: ${props => props.theme.colors.primary};
+        background-color: ${props => props.theme.colors.activeLight3d};
     }
 `

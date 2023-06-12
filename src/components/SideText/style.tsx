@@ -19,6 +19,13 @@ export const SideText = styled.span<SideTextProps>`
     position: absolute;
     font-weight: 300;
     z-index: 5;
+    font-size: 1.5rem;
+    @media (max-width: 550px) {
+        font-size: 1.3rem;
+        text-align: center;
+        
+    }
+    
     
     ${props => props.top && css<SideTextProps>`
         top: ${props => props.top};

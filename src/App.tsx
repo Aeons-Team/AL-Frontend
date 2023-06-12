@@ -7,7 +7,6 @@ import { useAppStore } from './data/AppStore'
 import { useChatStore } from './data/ChatStore'
 import Canvas from './components/Canvas'
 import UI from './components/UI'
-import Chat from './components/Chat'
 import Navbar from './components/Nav'
 import Topbar from './components/Topbar'
 import { theme } from './data/ThemeContext'
@@ -164,8 +163,6 @@ function App() {
         <Navbar />
         <Topbar />
       </S.AppMain>
-
-      <Chat />
     </S.App>
   )
 }
